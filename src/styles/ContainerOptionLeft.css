@@ -1,0 +1,86 @@
+.menuLeft {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.containerBtnCloseLeft {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerLayoutConfigureLeft {
+    width: 90%;
+    height: auto;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.applyOptionsBtn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.applyOptionFilterBtn {
+    width: 5rem;
+    height: 2rem;
+    background: none;
+    border-radius: 0.2rem;
+    border: 1px solid var(--blue);
+    font-family: "Roboto", "sans-serif";
+    font-weight: 500;
+    color: var(--blue);
+    transition: background-color 1.2s;
+    transition: color 1.2s;
+}
+
+.applyOptionFilterBtn:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.clearOptionFilterBtn {
+    width: 5rem;
+    height: 2rem;
+    background: none;
+    border-radius: 0.2rem;
+    border: 1px solid var(--pomegranate);
+    font-family: "Roboto", "sans-serif";
+    font-weight: 500;
+    color: var(--pomegranate);
+    transition: background-color 1.2s;
+    transition: color 1.2s;
+}
+
+.clearOptionFilterBtn:hover {
+    background-color: var(--pomegranate);
+    color: white;
+}
+
+.formControlLeft {
+    margin-left: 2rem;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Roboto', 'sans-serif';
+}

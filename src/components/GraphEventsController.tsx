@@ -8,6 +8,10 @@ import noverlap from "graphology-layout-noverlap";
 import { animateNodes } from "sigma/utils/animate";
 import { LayoutConfigureContext } from "../context/LayoutConfigureContext";
 
+function getMouseLayer() {
+  return document.querySelector(".sigma-mouse");
+}
+
 interface GraphEventsControllerProps {
   children?: unknown;
   mouseEvent: boolean;
@@ -45,10 +49,15 @@ export default function GraphEventsController({
       },
       leaveNode({ }) {
         setHoveredNode(null);
+        const mouseLayer = getMouseLayer();
+        if (mouseLayer) mouseLayer.classList.add("mouse-pointer");
       },
       enterNode({ node }) {
-        if (mouseEvent)
+        if (mouseEvent) {
           setHoveredNode(node);
+          const mouseLayer = getMouseLayer();
+          if (mouseLayer) mouseLayer.classList.remove("mouse-pointer");
+        }
       }
     });
   }, [mouseEvent]);
@@ -129,7 +138,7 @@ export default function GraphEventsController({
       });
       animateNodes(graph, forcePosition, { duration: 3000, easing: "linear" });
 
-    // N-Overlap Layout
+      // N-Overlap Layout
     } else if (layout === "n-overlap") {
       const noverlapPosition = noverlap(graph, {
         maxIterations: 300,
@@ -142,8 +151,8 @@ export default function GraphEventsController({
         duration: 2000,
         easing: "linear",
       });
-    
-    // Random Layout
+
+      // Random Layout
     } else if (layout === "random") {
       const randomPosition = random(graph, { scale: 1 });
       animateNodes(graph, randomPosition, {

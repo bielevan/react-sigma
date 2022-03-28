@@ -21,17 +21,17 @@ export default function GraphDataController({ children }: GraphDataControllerPro
             return;
 
         datasetAnimate.nodes.forEach((node) => {
-            let name: string = node.label.split(" ")[0].trim();
-            let promulgation: string = node.label.split(" ")[1].trim();
-            graph.addNode(node.id, {
+            let label_complete: string[] = node.label.split(" ");
+            let promulgation: string = label_complete[label_complete.length - 1];
+            graph.addNode(node.label, {
                 x: node.x,
                 y: node.y,
-                country: name,
+                label: node.label,
                 color: node.color,
                 size: 8.0,
                 promulgation: promulgation
             })
-        })
+        });
 
         return () => graph.clear();
     }, [datasetAnimate]);
@@ -47,9 +47,8 @@ export default function GraphDataController({ children }: GraphDataControllerPro
         if (filter.nodes.length > 0) {
             graph.forEachNode((node: string) => {
                 let att = graph.getNodeAttributes(node);
-                if (filter.nodes.findIndex((nodeFilter: string) => 
-                    att.country == nodeFilter.split(" ")[0].trim() &&
-                    att.promulgation == nodeFilter.split(" ")[1].trim()) < 0) {
+                if (filter.nodes.findIndex((nodeFilter: string) =>
+                    att.label == nodeFilter) < 0) {
                     graph.setNodeAttribute(node, "hidden", 1);
                 }
             });

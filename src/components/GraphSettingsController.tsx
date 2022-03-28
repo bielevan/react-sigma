@@ -31,6 +31,7 @@ export default function GraphSettingController({
     const hoveredColor: string = debouncedHoveredNode
       ? sigma.getNodeDisplayData(debouncedHoveredNode)!.color
       : "";
+
     sigma.setSetting(
       "nodeReducer",
       debouncedHoveredNode
@@ -54,7 +55,7 @@ export default function GraphSettingController({
       debouncedHoveredNode
         ? (edge, data) =>
             graph.hasExtremity(edge, debouncedHoveredNode)
-              ? { ...data, color: NODE_HIGH_COLOR, size: 1 }
+              ? { ...data, color: hoveredColor, size: 1 }
               : { ...data, color: EDGE_FADE_COLOR, hidden: true }
         : null
     );

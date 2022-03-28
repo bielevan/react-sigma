@@ -7,14 +7,13 @@ import styleElement from "./service/HtmlElementModifyProperties";
 import ContainerOptionsRight from "./components/ContainerOptionsRight";
 import ContainerOptionsLeft from "./components/ContainerOptionsLeft";
 import GraphDataController from "./components/GraphDataController";
-import drawLabel from "./service/canvas-utils";
 import GraphEventsController from "./components/GraphEventsController";
 import GraphSettingController from "./components/GraphSettingsController";
 import "./styles/App.css";
 import "react-sigma-v2/lib/react-sigma-v2.css";
 
 export default function App() {
-  
+
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);  // Controla node mouse_enter
   const [mouseEvent, setMouseEvent] = useState<boolean>(true);  // Controla se habilita ou não eventos do mouse  
 
@@ -44,17 +43,17 @@ export default function App() {
 
   return (
     <section className="graphContainer">
-      <section className="app-sigma">
+      <section className="react-sigma">
         <SigmaContainer
           className="containerGraph"
-          initialSettings={{
-            labelRenderer: drawLabel,
-            labelDensity: 0.07,
-            labelGridCellSize: 60,
-            labelRenderedSizeThreshold: 15,
-            labelFont: "Lato, sans-serif",
-            zIndex: true,
-          }}
+          // initialSettings={{
+          //   labelRenderer: drawLabel,
+          //   labelDensity: 0.07,
+          //   labelGridCellSize: 60,
+          //   labelRenderedSizeThreshold: 15,
+          //   labelFont: "Lato, sans-serif",
+          //   zIndex: true,
+          // }}
         >
           <GraphDataController />
           <GraphEventsController

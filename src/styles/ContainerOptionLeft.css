@@ -39,6 +39,10 @@
     justify-content: center;
 }
 
+.applyOptionsBtn:last-child {
+    margin-top: 1rem;
+}
+
 .applyOptionFilterBtn {
     width: 5rem;
     height: 2rem;

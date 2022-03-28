@@ -55,7 +55,7 @@ export default function GraphSettingController({
       debouncedHoveredNode
         ? (edge, data) =>
             graph.hasExtremity(edge, debouncedHoveredNode)
-              ? { ...data, color: hoveredColor, size: 1 }
+              ? { ...data, color: hoveredColor, size: 3 }
               : { ...data, color: EDGE_FADE_COLOR, hidden: true }
         : null
     );

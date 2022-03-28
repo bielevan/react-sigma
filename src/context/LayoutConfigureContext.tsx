@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { Dataset, Filter } from "../services/types";
+import { Dataset, Filter } from "../type/types";
 import TFIDF from "../data/tfidf/tsne/graph.json";
 import React from "react";
 
@@ -16,6 +16,7 @@ interface LayoutConfigureContextProps {
     layout: string;
     constructLayoutAfterApply: boolean;
     filter: Filter;
+    constitutionSize: number;
     setAlgoritmo: React.Dispatch<React.SetStateAction<number>>;
     setTypeReduce: React.Dispatch<React.SetStateAction<string>>;
     setLevelNeighbors: React.Dispatch<React.SetStateAction<number>>;
@@ -26,6 +27,7 @@ interface LayoutConfigureContextProps {
     setMinimumDegree: React.Dispatch<React.SetStateAction<number>>;
     setLayout: React.Dispatch<React.SetStateAction<string>>;
     setFilter: React.Dispatch<React.SetStateAction<Filter>>;
+    setConstitutionSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface LayoutConfigureProviderProps {
@@ -48,7 +50,8 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
     const [applyConfigure, setApplyConfigure] = useState<boolean>(false); // Busca o dataset escolhido pelo menu direito
     const [constructLayoutAfterApply, setConstructLayoutAfterApply] = useState<boolean>(false); 
     const [filter, setFilter] = useState<Filter>({ nodes: [] });
-    
+    const [constitutionSize, setConstitutionSize] = useState<number>(0);
+
     /**
      * Trigger para obter layout 
      */
@@ -94,6 +97,7 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             layout,
             constructLayoutAfterApply,
             filter,
+            constitutionSize,
             setFilter,
             setAlgoritmo,
             setTypeReduce,
@@ -103,7 +107,8 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             setCosine,
             setMaximumConnectedNeighbors,
             setMinimumDegree,
-            setLayout
+            setLayout,
+            setConstitutionSize,
         }}>
             {children}
         </LayoutConfigureContext.Provider>

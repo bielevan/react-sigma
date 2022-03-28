@@ -59,7 +59,11 @@ export default function ContainerOptionsLeft({
   const [continents, setContinents] = useState<string[]>([]);
   const [minPromulgation, setMinPromulgation] = useState<number>(1200); // Controla a data de promulgação minima
   const [maxPromulgation, setMaxPromulgation] = useState<number>(dataActual); // Controla a data de promulgação máxima
-  const { setFilter } = useContext(LayoutConfigureContext);
+  const {
+    constitutionSize,
+    setFilter,
+    setConstitutionSize
+  } = useContext(LayoutConfigureContext);
 
   function handleChange(event: SelectChangeEvent<typeof selectItems>) {
     const {
@@ -178,6 +182,37 @@ export default function ContainerOptionsLeft({
           type="button"
           className="clearOptionFilterBtn"
           onClick={removeFilter}>
+          Remove
+        </button>
+      </div>
+
+      <div className="containerLayoutConfigureLeft">
+        <FormControl className="formControlLeft">
+          <p>
+            Constitution Size: <span>{constitutionSize}</span>
+          </p>
+          <Slider
+            size="small"
+            defaultValue={constitutionSize}
+            aria-label="Small"
+            valueLabelDisplay="auto"
+            min={0}
+            max={100000}
+            step={10}
+            onChange={(event: any) => { setConstitutionSize(event.target.value); }}
+          />
+        </FormControl>
+      </div>
+
+      <div className="applyOptionsBtn">
+        <button
+          type="button"
+          className="applyOptionFilterBtn">
+          Apply
+        </button>
+        <button
+          type="button"
+          className="clearOptionFilterBtn">
           Remove
         </button>
       </div>

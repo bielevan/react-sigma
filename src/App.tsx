@@ -11,6 +11,7 @@ import GraphEventsController from "./components/GraphEventsController";
 import GraphSettingController from "./components/GraphSettingsController";
 import "./styles/App.css";
 import "react-sigma-v2/lib/react-sigma-v2.css";
+import drawLabel from "./service/canvas-utils";
 
 export default function App() {
 
@@ -46,14 +47,14 @@ export default function App() {
       <section className="react-sigma">
         <SigmaContainer
           className="containerGraph"
-          // initialSettings={{
-          //   labelRenderer: drawLabel,
-          //   labelDensity: 0.07,
-          //   labelGridCellSize: 60,
-          //   labelRenderedSizeThreshold: 15,
-          //   labelFont: "Lato, sans-serif",
-          //   zIndex: true,
-          // }}
+          initialSettings={{
+            labelRenderer: drawLabel,
+            labelDensity: 0.07,
+            labelGridCellSize: 60,
+            labelRenderedSizeThreshold: 15,
+            labelFont: "Roboto, sans-serif",
+            zIndex: true,
+          }}
         >
           <GraphDataController />
           <GraphEventsController

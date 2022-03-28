@@ -20,7 +20,7 @@ export default function GraphDataController({ children }: GraphDataControllerPro
         if (!datasetAnimate || !graph)
             return;
 
-        datasetAnimate.nodes.forEach((node) => {
+        datasetAnimate.nodes.forEach((node: any) => {
             let label_complete: string[] = node.label.split(" ");
             let promulgation: string = label_complete[label_complete.length - 1];
             graph.addNode(node.label, {

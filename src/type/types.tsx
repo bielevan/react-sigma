@@ -4,8 +4,9 @@ export interface Dataset {
         y: number,
         label: string,
         id: number,
-        color: string
+        cluter: number;
     }[];
+    clusters: number;
 }
 
 export interface Filter {

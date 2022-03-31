@@ -17,6 +17,7 @@ interface LayoutConfigureContextProps {
     constructLayoutAfterApply: boolean;
     filter: Filter;
     constitutionSize: number;
+    isClustering: boolean;
     setAlgoritmo: React.Dispatch<React.SetStateAction<number>>;
     setTypeReduce: React.Dispatch<React.SetStateAction<string>>;
     setLevelNeighbors: React.Dispatch<React.SetStateAction<number>>;
@@ -28,6 +29,7 @@ interface LayoutConfigureContextProps {
     setLayout: React.Dispatch<React.SetStateAction<string>>;
     setFilter: React.Dispatch<React.SetStateAction<Filter>>;
     setConstitutionSize: React.Dispatch<React.SetStateAction<number>>;
+    setIsClustering:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface LayoutConfigureProviderProps {
@@ -38,7 +40,7 @@ export const LayoutConfigureContext = createContext({} as LayoutConfigureContext
 
 export default function LayoutConfigureProvider({ children }: LayoutConfigureProviderProps) {
 
-    const [algoritmo, setAlgoritmo] = useState<number>(0);  // Define qual algoritmo utilizará para a construção da rede
+    const [algoritmo, setAlgoritmo] = useState<number>(3);  // Define qual algoritmo utilizará para a construção da rede
     const [typeReduce, setTypeReduce] = useState<string>("TSNE"); // Define o tipo de algoritmo para diminuição da dimensionalidade
     const [levelNeighbors, setLevelNeighbors] = useState<number>(0); // Define o nível de conexões para o algoritmo de Redes complexas
     const [embeddings, setEmbbeddings] = useState<number>(0); // Define o número de vertores de embeddings para algoritmo Doc2Vec
@@ -46,12 +48,13 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
     const [maximumConnectedNeighbors, setMaximumConnectedNeighbors] = useState<number>(0); // Define o número máximo de vizinhos conectados
     const [minimumDegree, setMinimumDegree] = useState<number>(0); // Define o número mínimo do grau de cada nó
     const [layout, setLayout] = useState<string>("");  // Define qual o layout vai ser utilizado
-    const [datasetAnimate, setDatasetAnimate] = useState<Dataset>({ nodes: [] });   // Dataset da rede que será usado para animação
+    const [datasetAnimate, setDatasetAnimate] = useState<Dataset>({ nodes: [], clusters: 0 });   // Dataset da rede que será usado para animação
     const [applyConfigure, setApplyConfigure] = useState<boolean>(false); // Busca o dataset escolhido pelo menu direito
     const [constructLayoutAfterApply, setConstructLayoutAfterApply] = useState<boolean>(false); 
     const [filter, setFilter] = useState<Filter>({ nodes: [] });
     const [constitutionSize, setConstitutionSize] = useState<number>(0);
-
+    const [isClustering, setIsClustering] = useState<boolean>(false);
+    
     /**
      * Trigger para obter layout 
      */
@@ -63,15 +66,16 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
          *  2 - Medidas de centralidade
          */
         let path: string = "../data/";
-        path += algoritmo == 0 ? "tfidf/" : algoritmo == 1 ? "doc2vec" : "network";
+        path += algoritmo == 0 ? "tfidf/" : algoritmo == 1 ? "doc2vec/" : algoritmo == 2 ? "network/" : "ccp/";
         path += typeReduce == "PCA" ? "pca/" : "tsne/";
         path +=
-          algoritmo == 3 ? // Network 
+          algoritmo == 2 ?      // Network 
             (levelNeighbors == 1 ? "1/" : (levelNeighbors == 2 ? "2/" : "3/"))
-            : algoritmo == 2 ? // Doc2vec
+            : algoritmo == 1 ?  // Doc2vec
               (embeddings == 100 ? "100/" : (embeddings == 200 ? "200/" : "300/"))
-              : ''; // TFIDF
+              : '';             // TFIDF
         path += "graph.json";
+        console.log(path);
         const graph: any = () => import("../data/tfidf/tsne/graph.json");
     
         // Load dataset   
@@ -98,6 +102,7 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             constructLayoutAfterApply,
             filter,
             constitutionSize,
+            isClustering,
             setFilter,
             setAlgoritmo,
             setTypeReduce,
@@ -109,6 +114,7 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             setMinimumDegree,
             setLayout,
             setConstitutionSize,
+            setIsClustering,
         }}>
             {children}
         </LayoutConfigureContext.Provider>

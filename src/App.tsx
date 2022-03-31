@@ -9,14 +9,14 @@ import ContainerOptionsLeft from "./components/ContainerOptionsLeft";
 import GraphDataController from "./components/GraphDataController";
 import GraphEventsController from "./components/GraphEventsController";
 import GraphSettingController from "./components/GraphSettingsController";
+import drawLabel from "./service/canvas-utils";
 import "./styles/App.css";
 import "react-sigma-v2/lib/react-sigma-v2.css";
-import drawLabel from "./service/canvas-utils";
 
 export default function App() {
 
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);  // Controla node mouse_enter
-  const [mouseEvent, setMouseEvent] = useState<boolean>(true);  // Controla se habilita ou não eventos do mouse  
+  const [mouseEvent, setMouseEvent] = useState<boolean>(true);          // Controla se habilita ou não eventos do mouse  
 
   function openContainerFilterLeft() {
     styleElement("panelRight", "width", "0");

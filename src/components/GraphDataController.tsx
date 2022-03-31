@@ -7,11 +7,28 @@ interface GraphDataControllerProps {
     children?: unknown;
 }
 
+const colors = [
+    '#1abc9c',
+    '#2ecc71',
+    '#3498db',
+    '#9b59b6',
+    '#34495e',
+    '#f1c40f',
+    '#e67e22',
+    '#e74c3c',
+    '#7f8c8d',
+    '#e84393',
+]
+
 export default function GraphDataController({ children }: GraphDataControllerProps) {
 
     const sigma = useSigma();
     const graph = sigma.getGraph();
-    const { datasetAnimate, filter } = useContext(LayoutConfigureContext);
+    const {
+        datasetAnimate,
+        filter,
+        isClustering
+    } = useContext(LayoutConfigureContext);
 
     /**
      * Constroi grafo assim que dataset é mudado
@@ -20,18 +37,34 @@ export default function GraphDataController({ children }: GraphDataControllerPro
         if (!datasetAnimate || !graph)
             return;
 
-        datasetAnimate.nodes.forEach((node: any) => {
-            let label_complete: string[] = node.label.split(" ");
-            let promulgation: string = label_complete[label_complete.length - 1];
-            graph.addNode(node.label, {
-                x: node.x,
-                y: node.y,
-                label: node.label,
-                color: node.color,
-                size: 8.0,
-                promulgation: promulgation
-            })
-        });
+        if (isClustering) {
+            datasetAnimate.nodes.forEach((node: any) => {
+                let label_complete: string[] = node.label.split(" ");
+                let promulgation: string = label_complete[label_complete.length - 1];
+                graph.addNode(node.label, {
+                    x: node.x,
+                    y: node.y,
+                    label: node.label,
+                    cluster: node.cluter,
+                    color: colors[node.cluster],
+                    size: 8.0,
+                    promulgation: promulgation
+                })
+            });
+        } else {
+            datasetAnimate.nodes.forEach((node: any) => {
+                let label_complete: string[] = node.label.split(" ");
+                let promulgation: string = label_complete[label_complete.length - 1];
+                graph.addNode(node.label, {
+                    x: node.x,
+                    y: node.y,
+                    label: node.label,
+                    color: '#95a5a6',
+                    size: 8.0,
+                    promulgation: promulgation
+                })
+            });
+        }
 
         return () => graph.clear();
     }, [datasetAnimate]);

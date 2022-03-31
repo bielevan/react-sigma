@@ -1,6 +1,8 @@
 import {
+  Checkbox,
   FormControl,
   FormControlLabel,
+  FormGroup,
   FormLabel,
   IconButton,
   Radio,
@@ -9,8 +11,8 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useContext, useState } from "react";
-import "../styles/ContainerOptionRight.css";
 import { LayoutConfigureContext } from "../context/LayoutConfigureContext";
+import "../styles/ContainerOptionRight.css";
 
 interface ContainerOptionsRightProps {
   containerRightClose: () => void;
@@ -34,7 +36,8 @@ export default function ContainerOptionsRight({
     setAlgoritmo,
     setTypeReduce,
     setLevelNeighbors,
-    setEmbbeddings
+    setEmbbeddings,
+    setIsClustering
   } = useContext(LayoutConfigureContext);
 
   function setSelectedAlgoritm() {
@@ -64,6 +67,7 @@ export default function ContainerOptionsRight({
             <option value="tfidf">TF-IDF</option>
             <option value="Americas">Doc2Vec</option>
             <option value="Asia">Centralidade</option>
+            <option value="Asia">CCP</option>
           </select>
         </FormControl>
 
@@ -187,6 +191,17 @@ export default function ContainerOptionsRight({
               onClick={(event: any) => setLayout(event.target.value)}
             />
           </RadioGroup>
+        </FormControl>
+
+        <FormControl className="layoutConfigureForm">
+          <FormLabel id="">Agrupar</FormLabel>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Checkbox onClick={(event: any) => setIsClustering(event.target.checked)} />
+              }
+              label="KMeans" />
+          </FormGroup>
         </FormControl>
 
         <button

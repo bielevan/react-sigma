@@ -1,5 +1,4 @@
 /* Container maior */
-
 .graphContainer {
     width: 100%;
     height: 100vh;
@@ -8,39 +7,21 @@
     z-index: 1;
 }
 
-
-/* Buttons superior */
-
-.graphContainerShow {
+/* Container Grafo */
+.react-sigma {
     width: 100%;
-    height: 10%;
-    padding: 1rem;
-    position: fixed;
-    z-index: 2;
+    height: 100vh;
+    z-index: 30;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    z-index: 3;
-}
-
-
-/* Container Grafo */
-
-.react-sigma {
-    /* width: 100%; */
-    height: 100vh;
-    /* position: relative; */
-    z-index: 30;
 }
 
 .containerGraph {
-    width: 100%;
     height: 100vh;
     position: inherit;
     z-index: 2;
-    background-color: red;
 }
 
 .graphOptionsFilterShow {
@@ -85,6 +66,7 @@
     background-color: var(--silver);
     overflow-x: hidden;
     transition: 0.5s;
+    opacity: 0.9;
 }
 
 .graphOptionsLayoutRight {
@@ -100,6 +82,34 @@
     opacity: 0.9;
 }
 
+.graphOptionsFilterFooter {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    background-color: #ecf0f1;
+    transition: 0.5s;
+    opacity: 0.8;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    margin: auto;
+    box-shadow: 0 -4px rgba(149, 165, 166, 0.2);
+}
+
+.graphOptionsFilterFooter > div {
+    width: 90%;
+    height: 7rem;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
 /* Footer */
 footer {
     width: 100%;
@@ -110,32 +120,6 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    z-index: 3;
+    justify-content: space-around;
+    z-index: 4;
 }
-
-.mouseBtnEvent {
-    width: 2.2rem;
-    height: 2.2rem;
-    border: none;
-    border-radius: 50%;
-    transition: background-color 0.4s;
-    cursor: pointer;
-}
-
-.mouseBtnColorTrue {
-    background-color: var(--blue);
-}
-
-.mouseBtnColorTrue:hover {
-    background-color: var(--blue-dark);
-}
-
-.mouseBtnColorFalse {
-    background-color: var(--alizarin);
-}
-
-.mouseBtnColorFalse:hover {
-    background-color: var(--pomegranate);
-}
-

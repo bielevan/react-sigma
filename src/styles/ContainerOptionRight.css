@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    opacity: 0.9;
 }
 
 .containerBtnClose {
@@ -37,30 +36,29 @@
     margin-left: auto;
     text-align: center;
     font-family: "Roboto", "sans-serif";
-    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-.selectFilterAlgoritm {
-    width: 8rem;
-    height: 1.8rem;
-    margin-top: 0.6rem;
-    margin-left: auto;
-    margin-right: auto;
-    background: none;
-    border: 1px solid var(--blue);
-    border-radius: 0.5rem;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--blue);
+.radioBtnsLayout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.radioBtnsLayout {
+.btnLayoutApply {
+    width: 90%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .applyLayoutBtn {
@@ -74,10 +72,27 @@
     color: var(--blue);
     transition: background-color 1.2s;
     transition: color 1.2s;
-    margin-top: -0.4rem;
 }
 
 .applyLayoutBtn:hover {
     background-color: var(--blue);
+    color: white;
+}
+
+.resetLayoutBtn {
+    width: 7rem;
+    height: 2rem;
+    background: none;
+    border-radius: 0.2rem;
+    border: 1px solid var(--pomegranate);
+    font-family: "Roboto", "sans-serif";
+    font-weight: 500;
+    color: var(--pomegranate);
+    transition: background-color 1.2s;
+    transition: color 1.2s;
+}
+
+.resetLayoutBtn:hover {
+    background-color: var(--pomegranate);
     color: white;
 }

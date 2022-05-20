@@ -4,8 +4,9 @@ export interface Dataset {
         y: number,
         label: string,
         id: number,
-        cluter: number;
+        cluster: number;
     }[];
+    edges: {}[];
     clusters: number;
 }
 

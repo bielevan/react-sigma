@@ -1,0 +1,1696 @@
+{
+    "features": [
+        {
+            "Country": "Uganda",
+            "Scope": "0.69",
+            "Length": "49,448",
+            "Executive Power": "2",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "5",
+            "Number of Rights": "70"
+        },
+        {
+            "Country": "Ukraine",
+            "Scope": "0.66",
+            "Length": "19,299",
+            "Executive Power": "6",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "4",
+            "Number of Rights": "70"
+        },
+        {
+            "Country": "United Arab Emirates",
+            "Scope": "0.47",
+            "Length": "11,557",
+            "Executive Power": "4",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "2",
+            "Number of Rights": "32"
+        },
+        {
+            "Country": "United States of America",
+            "Scope": "0.49",
+            "Length": "7,762",
+            "Executive Power": "1",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "35"
+        },
+        {
+            "Country": "Uruguay",
+            "Scope": "0.66",
+            "Length": "29,911",
+            "Executive Power": "5",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "1",
+            "Number of Rights": "54"
+        },
+        {
+            "Country": "Uzbekistan",
+            "Scope": "0.59",
+            "Length": "7,941",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "55"
+        },
+        {
+            "Country": "Vanuatu",
+            "Scope": "0.51",
+            "Length": "8,425",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "4",
+            "Number of Rights": "28"
+        },
+        {
+            "Country": "Venezuela",
+            "Scope": "0.66",
+            "Length": "37,344",
+            "Executive Power": "6",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "82"
+        },
+        {
+            "Country": "Zambia",
+            "Scope": "0.63",
+            "Length": "30,696",
+            "Executive Power": "4",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "4",
+            "Number of Rights": "50"
+        },
+        {
+            "Country": "Zimbabwe",
+            "Scope": "0.81",
+            "Length": "55,883",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "74"
+        },
+        {
+            "Country": "Angola",
+            "Scope": "0.8",
+            "Length": "27,181",
+            "Executive Power": "7",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "2",
+            "Number of Rights": "80"
+        },
+        {
+            "Country": "Antigua and Barbuda",
+            "Scope": "0.56",
+            "Length": "38,464",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "0",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Australia",
+            "Scope": "0.43",
+            "Length": "17,318",
+            "Executive Power": "2",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "3",
+            "Number of Rights": "11"
+        },
+        {
+            "Country": "Austria",
+            "Scope": "0.57",
+            "Length": "41,366",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "15"
+        },
+        {
+            "Country": "Azerbaijan",
+            "Scope": "0.63",
+            "Length": "17,354",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "3",
+            "Number of Rights": "72"
+        },
+        {
+            "Country": "Bahrain",
+            "Scope": "0.57",
+            "Length": "10,806",
+            "Executive Power": "7",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Bangladesh",
+            "Scope": "0.63",
+            "Length": "27,643",
+            "Executive Power": "4",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "5",
+            "Number of Rights": "49"
+        },
+        {
+            "Country": "Bahamas",
+            "Scope": "0.47",
+            "Length": "41,835",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "2",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Barbados",
+            "Scope": "0.4",
+            "Length": "34,144",
+            "Executive Power": "3",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "40"
+        },
+        {
+            "Country": "Belarus",
+            "Scope": "0.61",
+            "Length": "13,278",
+            "Executive Power": "7",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "62"
+        },
+        {
+            "Country": "Belize",
+            "Scope": "0.47",
+            "Length": "39,629",
+            "Executive Power": "3",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "4",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Belgium",
+            "Scope": "0.59",
+            "Length": "16,119",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "35"
+        },
+        {
+            "Country": "Benin",
+            "Scope": "0.56",
+            "Length": "11,386",
+            "Executive Power": "4",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "43"
+        },
+        {
+            "Country": "Bhutan",
+            "Scope": "0.64",
+            "Length": "13,632",
+            "Executive Power": "4",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "5",
+            "Number of Rights": "44"
+        },
+        {
+            "Country": "United Kingdom",
+            "Scope": "0.43",
+            "Length": "54,408",
+            "Executive Power": "0",
+            "Legislative Power": "0.09",
+            "Judicial Independence": "3",
+            "Number of Rights": "44"
+        },
+        {
+            "Country": "Bosnia Herzegovina",
+            "Scope": "0.41",
+            "Length": "5,454",
+            "Executive Power": "2",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "0",
+            "Number of Rights": "28"
+        },
+        {
+            "Country": "Brunei",
+            "Scope": "0.33",
+            "Length": "13,869",
+            "Executive Power": "7",
+            "Legislative Power": "0.0",
+            "Judicial Independence": "0",
+            "Number of Rights": "2"
+        },
+        {
+            "Country": "Botswana",
+            "Scope": "0.43",
+            "Length": "30,713",
+            "Executive Power": "3",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "4",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Bolivia",
+            "Scope": "0.74",
+            "Length": "39,375",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "88"
+        },
+        {
+            "Country": "Brazil",
+            "Scope": "0.7",
+            "Length": "64,488",
+            "Executive Power": "5",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "5",
+            "Number of Rights": "79"
+        },
+        {
+            "Country": "Bulgaria",
+            "Scope": "0.7",
+            "Length": "13,641",
+            "Executive Power": "6",
+            "Legislative Power": "0.52",
+            "Judicial Independence": "6",
+            "Number of Rights": "70"
+        },
+        {
+            "Country": "Cambodia",
+            "Scope": "0.61",
+            "Length": "8,936",
+            "Executive Power": "5",
+            "Legislative Power": "0.52",
+            "Judicial Independence": "2",
+            "Number of Rights": "52"
+        },
+        {
+            "Country": "Cameroon",
+            "Scope": "0.46",
+            "Length": "8,444",
+            "Executive Power": "7",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "1",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Burundi",
+            "Scope": "0.66",
+            "Length": "17,574",
+            "Executive Power": "7",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "2",
+            "Number of Rights": "55"
+        },
+        {
+            "Country": "Burkina Faso",
+            "Scope": "0.59",
+            "Length": "10,03",
+            "Executive Power": "7",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "3",
+            "Number of Rights": "54"
+        },
+        {
+            "Country": "Canada",
+            "Scope": "0.4",
+            "Length": "19,565",
+            "Executive Power": "2",
+            "Legislative Power": "0.05",
+            "Judicial Independence": "1",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Cape Verde",
+            "Scope": "0.76",
+            "Length": "32,132",
+            "Executive Power": "5",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "87"
+        },
+        {
+            "Country": "Central African Republic",
+            "Scope": "0.57",
+            "Length": "9,767",
+            "Executive Power": "5",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "3",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Chad",
+            "Scope": "0.57",
+            "Length": "11,768",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "44"
+        },
+        {
+            "Country": "China",
+            "Scope": "0.51",
+            "Length": "10,96",
+            "Executive Power": "2",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "33"
+        },
+        {
+            "Country": "Chile",
+            "Scope": "0.67",
+            "Length": "25,821",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Colombia",
+            "Scope": "0.76",
+            "Length": "46,902",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "3",
+            "Number of Rights": "76"
+        },
+        {
+            "Country": "Congo",
+            "Scope": "0.6",
+            "Length": "9,97",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "2",
+            "Number of Rights": "55"
+        },
+        {
+            "Country": "Costa Rica",
+            "Scope": "0.63",
+            "Length": "16,705",
+            "Executive Power": "5",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "55"
+        },
+        {
+            "Country": "Comoros",
+            "Scope": "0.44",
+            "Length": "6,185",
+            "Executive Power": "5",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "1",
+            "Number of Rights": "23"
+        },
+        {
+            "Country": "Croatia",
+            "Scope": "0.59",
+            "Length": "10,898",
+            "Executive Power": "6",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "4",
+            "Number of Rights": "69"
+        },
+        {
+            "Country": "Cote DIvoire",
+            "Scope": "0.5",
+            "Length": "7,897",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "3",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Cuba",
+            "Scope": "0.54",
+            "Length": "12,893",
+            "Executive Power": "3",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "45"
+        },
+        {
+            "Country": "Czech Republic",
+            "Scope": "0.6",
+            "Length": "14,58",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "57"
+        },
+        {
+            "Country": "Cyprus",
+            "Scope": "0.53",
+            "Length": "37,006",
+            "Executive Power": "3",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "52"
+        },
+        {
+            "Country": "Democratic Republic of the Congo",
+            "Scope": "0.7",
+            "Length": "19,285",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "58"
+        },
+        {
+            "Country": "Denmark",
+            "Scope": "0.53",
+            "Length": "6,221",
+            "Executive Power": "4",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "21"
+        },
+        {
+            "Country": "Djibouti",
+            "Scope": "0.41",
+            "Length": "6,666",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "26"
+        },
+        {
+            "Country": "Dominican Republic",
+            "Scope": "0.7",
+            "Length": "29,71",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "4",
+            "Number of Rights": "75"
+        },
+        {
+            "Country": "Dominica",
+            "Scope": "0.54",
+            "Length": "36,08",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "0",
+            "Number of Rights": "38"
+        },
+        {
+            "Country": "East Timor",
+            "Scope": "0.64",
+            "Length": "15,307",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "67"
+        },
+        {
+            "Country": "Ecuador",
+            "Scope": "0.79",
+            "Length": "54,555",
+            "Executive Power": "7",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "2",
+            "Number of Rights": "99"
+        },
+        {
+            "Country": "Egypt",
+            "Scope": "0.77",
+            "Length": "22,626",
+            "Executive Power": "6",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "1",
+            "Number of Rights": "65"
+        },
+        {
+            "Country": "El Salvador",
+            "Scope": "0.64",
+            "Length": "22,823",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "61"
+        },
+        {
+            "Country": "Equatorial Guinea",
+            "Scope": "0.57",
+            "Length": "5,575",
+            "Executive Power": "7",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "33"
+        },
+        {
+            "Country": "Ethiopia",
+            "Scope": "0.64",
+            "Length": "13,63",
+            "Executive Power": "3",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "4",
+            "Number of Rights": "77"
+        },
+        {
+            "Country": "Eritrea",
+            "Scope": "0.54",
+            "Length": "6,753",
+            "Executive Power": "3",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "4",
+            "Number of Rights": "54"
+        },
+        {
+            "Country": "Fiji",
+            "Scope": "0.63",
+            "Length": "40,773",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "4",
+            "Number of Rights": "64"
+        },
+        {
+            "Country": "Estonia",
+            "Scope": "0.59",
+            "Length": "11,344",
+            "Executive Power": "6",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "66"
+        },
+        {
+            "Country": "France",
+            "Scope": "0.5",
+            "Length": "10,18",
+            "Executive Power": "7",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "2",
+            "Number of Rights": "13"
+        },
+        {
+            "Country": "Finland",
+            "Scope": "0.61",
+            "Length": "12,64",
+            "Executive Power": "3",
+            "Legislative Power": "0.48",
+            "Judicial Independence": "1",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Gabon",
+            "Scope": "0.66",
+            "Length": "11,804",
+            "Executive Power": "7",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "40"
+        },
+        {
+            "Country": "Gambia",
+            "Scope": "0.73",
+            "Length": "43,465",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "6",
+            "Number of Rights": "62"
+        },
+        {
+            "Country": "German Federal Republic",
+            "Scope": "0.71",
+            "Length": "27,379",
+            "Executive Power": "5",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "2",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Georgia",
+            "Scope": "0.66",
+            "Length": "11,49",
+            "Executive Power": "5",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "2",
+            "Number of Rights": "63"
+        },
+        {
+            "Country": "Ghana",
+            "Scope": "0.71",
+            "Length": "53,985",
+            "Executive Power": "3",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "4",
+            "Number of Rights": "61"
+        },
+        {
+            "Country": "Guatemala",
+            "Scope": "0.6",
+            "Length": "28,692",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "63"
+        },
+        {
+            "Country": "Greece",
+            "Scope": "0.73",
+            "Length": "26,989",
+            "Executive Power": "3",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "3",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "Grenada",
+            "Scope": "0.47",
+            "Length": "33,737",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Guinea Bissau",
+            "Scope": "0.57",
+            "Length": "7,82",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "0",
+            "Number of Rights": "47"
+        },
+        {
+            "Country": "Guyana",
+            "Scope": "0.59",
+            "Length": "46,221",
+            "Executive Power": "3",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "57"
+        },
+        {
+            "Country": "Haiti",
+            "Scope": "0.69",
+            "Length": "18,488",
+            "Executive Power": "4",
+            "Legislative Power": "0.62",
+            "Judicial Independence": "4",
+            "Number of Rights": "49"
+        },
+        {
+            "Country": "Honduras",
+            "Scope": "0.69",
+            "Length": "23,434",
+            "Executive Power": "4",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "68"
+        },
+        {
+            "Country": "Iceland",
+            "Scope": "0.43",
+            "Length": "4,089",
+            "Executive Power": "4",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "40"
+        },
+        {
+            "Country": "Hungary",
+            "Scope": "0.69",
+            "Length": "15,247",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "68"
+        },
+        {
+            "Country": "Indonesia",
+            "Scope": "0.56",
+            "Length": "5,915",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "32"
+        },
+        {
+            "Country": "India",
+            "Scope": "0.6",
+            "Length": "146,385",
+            "Executive Power": "4",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "4",
+            "Number of Rights": "44"
+        },
+        {
+            "Country": "Iraq",
+            "Scope": "0.6",
+            "Length": "11,55",
+            "Executive Power": "4",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "53"
+        },
+        {
+            "Country": "Ireland",
+            "Scope": "0.56",
+            "Length": "16,007",
+            "Executive Power": "3",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "31"
+        },
+        {
+            "Country": "Iran",
+            "Scope": "0.66",
+            "Length": "16,179",
+            "Executive Power": "2",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "4",
+            "Number of Rights": "45"
+        },
+        {
+            "Country": "Israel",
+            "Scope": "0.39",
+            "Length": "17,053",
+            "Executive Power": "0",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "4",
+            "Number of Rights": "6"
+        },
+        {
+            "Country": "Italy",
+            "Scope": "0.67",
+            "Length": "11,708",
+            "Executive Power": "4",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "1",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "Jamaica",
+            "Scope": "0.4",
+            "Length": "38,048",
+            "Executive Power": "3",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "1",
+            "Number of Rights": "35"
+        },
+        {
+            "Country": "Japan",
+            "Scope": "0.36",
+            "Length": "4,998",
+            "Executive Power": "2",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Jordan",
+            "Scope": "0.54",
+            "Length": "10,239",
+            "Executive Power": "7",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "1",
+            "Number of Rights": "35"
+        },
+        {
+            "Country": "Kazakhstan",
+            "Scope": "0.56",
+            "Length": "13,482",
+            "Executive Power": "6",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "3",
+            "Number of Rights": "57"
+        },
+        {
+            "Country": "Kenya",
+            "Scope": "0.81",
+            "Length": "48,818",
+            "Executive Power": "2",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "5",
+            "Number of Rights": "72"
+        },
+        {
+            "Country": "Kiribati",
+            "Scope": "0.54",
+            "Length": "26,08",
+            "Executive Power": "2",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "4",
+            "Number of Rights": "41"
+        },
+        {
+            "Country": "Kosovo",
+            "Scope": "0.66",
+            "Length": "19,782",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "5",
+            "Number of Rights": "73"
+        },
+        {
+            "Country": "Kyrgyz Republic",
+            "Scope": "0.71",
+            "Length": "14,327",
+            "Executive Power": "4",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "3",
+            "Number of Rights": "69"
+        },
+        {
+            "Country": "Laos",
+            "Scope": "0.46",
+            "Length": "4,82",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "2",
+            "Number of Rights": "27"
+        },
+        {
+            "Country": "Kuwait",
+            "Scope": "0.51",
+            "Length": "8,197",
+            "Executive Power": "7",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "38"
+        },
+        {
+            "Country": "Latvia",
+            "Scope": "0.51",
+            "Length": "4,917",
+            "Executive Power": "3",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "44"
+        },
+        {
+            "Country": "Lebanon",
+            "Scope": "0.47",
+            "Length": "6,296",
+            "Executive Power": "6",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "14"
+        },
+        {
+            "Country": "Lesotho",
+            "Scope": "0.56",
+            "Length": "45,532",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "3",
+            "Number of Rights": "55"
+        },
+        {
+            "Country": "Liberia",
+            "Scope": "0.59",
+            "Length": "11,667",
+            "Executive Power": "2",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "49"
+        },
+        {
+            "Country": "Liechtenstein",
+            "Scope": "0.47",
+            "Length": "9,513",
+            "Executive Power": "5",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "2",
+            "Number of Rights": "29"
+        },
+        {
+            "Country": "Lithuania",
+            "Scope": "0.66",
+            "Length": "12,214",
+            "Executive Power": "4",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "66"
+        },
+        {
+            "Country": "Luxembourg",
+            "Scope": "0.53",
+            "Length": "5,601",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "3",
+            "Number of Rights": "27"
+        },
+        {
+            "Country": "Madagascar",
+            "Scope": "0.6",
+            "Length": "15,759",
+            "Executive Power": "7",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "1",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Malawi",
+            "Scope": "0.67",
+            "Length": "33,422",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "4",
+            "Number of Rights": "66"
+        },
+        {
+            "Country": "Macedonia",
+            "Scope": "0.6",
+            "Length": "13,486",
+            "Executive Power": "3",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "3",
+            "Number of Rights": "68"
+        },
+        {
+            "Country": "Malaysia",
+            "Scope": "0.59",
+            "Length": "64,08",
+            "Executive Power": "4",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "2",
+            "Number of Rights": "31"
+        },
+        {
+            "Country": "Maldives",
+            "Scope": "0.61",
+            "Length": "23,991",
+            "Executive Power": "1",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "5",
+            "Number of Rights": "74"
+        },
+        {
+            "Country": "Marshall Islands",
+            "Scope": "0.44",
+            "Length": "21,429",
+            "Executive Power": "1",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "5",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Malta",
+            "Scope": "0.47",
+            "Length": "31,82",
+            "Executive Power": "4",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "2",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Mauritania",
+            "Scope": "0.49",
+            "Length": "6,997",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "31"
+        },
+        {
+            "Country": "Mexico",
+            "Scope": "0.76",
+            "Length": "57,087",
+            "Executive Power": "4",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "81"
+        },
+        {
+            "Country": "Mauritius",
+            "Scope": "0.47",
+            "Length": "37,32",
+            "Executive Power": "3",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "3",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Micronesia",
+            "Scope": "0.46",
+            "Length": "5,271",
+            "Executive Power": "3",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "4",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Moldova",
+            "Scope": "0.61",
+            "Length": "12,818",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "65"
+        },
+        {
+            "Country": "Monaco",
+            "Scope": "0.37",
+            "Length": "3,814",
+            "Executive Power": "5",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "2",
+            "Number of Rights": "26"
+        },
+        {
+            "Country": "Mongolia",
+            "Scope": "0.56",
+            "Length": "8,25",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "62"
+        },
+        {
+            "Country": "Montenegro",
+            "Scope": "0.64",
+            "Length": "11,572",
+            "Executive Power": "5",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "4",
+            "Number of Rights": "76"
+        },
+        {
+            "Country": "Morocco",
+            "Scope": "0.64",
+            "Length": "15,897",
+            "Executive Power": "7",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "53"
+        },
+        {
+            "Country": "Mozambique",
+            "Scope": "0.73",
+            "Length": "24,171",
+            "Executive Power": "7",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "2",
+            "Number of Rights": "64"
+        },
+        {
+            "Country": "Myanmar",
+            "Scope": "0.6",
+            "Length": "40,492",
+            "Executive Power": "3",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "4",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Nepal",
+            "Scope": "0.7",
+            "Length": "32,753",
+            "Executive Power": "3",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "6",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "Namibia",
+            "Scope": "0.59",
+            "Length": "24,198",
+            "Executive Power": "5",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "4",
+            "Number of Rights": "59"
+        },
+        {
+            "Country": "Nauru",
+            "Scope": "0.33",
+            "Length": "13,714",
+            "Executive Power": "2",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "34"
+        },
+        {
+            "Country": "Netherlands",
+            "Scope": "0.43",
+            "Length": "8,739",
+            "Executive Power": "5",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "26"
+        },
+        {
+            "Country": "Nicaragua",
+            "Scope": "0.64",
+            "Length": "20,535",
+            "Executive Power": "4",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "77"
+        },
+        {
+            "Country": "Niger",
+            "Scope": "0.66",
+            "Length": "14,806",
+            "Executive Power": "5",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "46"
+        },
+        {
+            "Country": "Nigeria",
+            "Scope": "0.63",
+            "Length": "66,263",
+            "Executive Power": "2",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "4",
+            "Number of Rights": "57"
+        },
+        {
+            "Country": "Norway",
+            "Scope": "0.51",
+            "Length": "7,307",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Oman",
+            "Scope": "0.56",
+            "Length": "7,233",
+            "Executive Power": "5",
+            "Legislative Power": "0.05",
+            "Judicial Independence": "1",
+            "Number of Rights": "39"
+        },
+        {
+            "Country": "Pakistan",
+            "Scope": "0.64",
+            "Length": "56,24",
+            "Executive Power": "5",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "3",
+            "Number of Rights": "45"
+        },
+        {
+            "Country": "Panama",
+            "Scope": "0.59",
+            "Length": "26,097",
+            "Executive Power": "5",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "2",
+            "Number of Rights": "63"
+        },
+        {
+            "Country": "Papua New Guinea",
+            "Scope": "0.47",
+            "Length": "58,49",
+            "Executive Power": "2",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "53"
+        },
+        {
+            "Country": "Paraguay",
+            "Scope": "0.61",
+            "Length": "25,461",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "74"
+        },
+        {
+            "Country": "Peoples Republic of Korea",
+            "Scope": "0.5",
+            "Length": "7,364",
+            "Executive Power": "1",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "35"
+        },
+        {
+            "Country": "Peru",
+            "Scope": "0.7",
+            "Length": "19,216",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "5",
+            "Number of Rights": "72"
+        },
+        {
+            "Country": "Philippines",
+            "Scope": "0.71",
+            "Length": "21,954",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "63"
+        },
+        {
+            "Country": "Poland",
+            "Scope": "0.66",
+            "Length": "19,602",
+            "Executive Power": "6",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "3",
+            "Number of Rights": "60"
+        },
+        {
+            "Country": "Portugal",
+            "Scope": "0.76",
+            "Length": "35,219",
+            "Executive Power": "5",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "87"
+        },
+        {
+            "Country": "Qatar",
+            "Scope": "0.51",
+            "Length": "6,848",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "32"
+        },
+        {
+            "Country": "Republic of Korea",
+            "Scope": "0.66",
+            "Length": "9,059",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "4",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "Romania",
+            "Scope": "0.57",
+            "Length": "14,663",
+            "Executive Power": "7",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "71"
+        },
+        {
+            "Country": "Russia",
+            "Scope": "0.64",
+            "Length": "12,908",
+            "Executive Power": "7",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "3",
+            "Number of Rights": "64"
+        },
+        {
+            "Country": "Rwanda",
+            "Scope": "0.63",
+            "Length": "16,94",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "53"
+        },
+        {
+            "Country": "Saudi Arabia",
+            "Scope": "0.49",
+            "Length": "6,335",
+            "Executive Power": "4",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "3",
+            "Number of Rights": "15"
+        },
+        {
+            "Country": "Samoa",
+            "Scope": "0.34",
+            "Length": "19,611",
+            "Executive Power": "4",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "4",
+            "Number of Rights": "37"
+        },
+        {
+            "Country": "Sao Tome and Principe",
+            "Scope": "0.51",
+            "Length": "7,988",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "62"
+        },
+        {
+            "Country": "Senegal",
+            "Scope": "0.53",
+            "Length": "10,866",
+            "Executive Power": "7",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "2",
+            "Number of Rights": "33"
+        },
+        {
+            "Country": "Serbia",
+            "Scope": "0.64",
+            "Length": "19,891",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "1",
+            "Number of Rights": "88"
+        },
+        {
+            "Country": "Seychelles",
+            "Scope": "0.63",
+            "Length": "39,729",
+            "Executive Power": "5",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "61"
+        },
+        {
+            "Country": "Slovenia",
+            "Scope": "0.61",
+            "Length": "11,406",
+            "Executive Power": "6",
+            "Legislative Power": "0.52",
+            "Judicial Independence": "5",
+            "Number of Rights": "72"
+        },
+        {
+            "Country": "Slovakia",
+            "Scope": "0.67",
+            "Length": "18,402",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "5",
+            "Number of Rights": "74"
+        },
+        {
+            "Country": "Socialist Republic of Vietnam",
+            "Scope": "0.51",
+            "Length": "11,344",
+            "Executive Power": "2",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "0",
+            "Number of Rights": "45"
+        },
+        {
+            "Country": "Somalia",
+            "Scope": "0.64",
+            "Length": "19,823",
+            "Executive Power": "5",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "57"
+        },
+        {
+            "Country": "Solomon Islands",
+            "Scope": "0.41",
+            "Length": "31,836",
+            "Executive Power": "1",
+            "Legislative Power": "0.05",
+            "Judicial Independence": "4",
+            "Number of Rights": "41"
+        },
+        {
+            "Country": "Sierra Leone",
+            "Scope": "0.54",
+            "Length": "44,636",
+            "Executive Power": "3",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "5",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "South Sudan",
+            "Scope": "0.73",
+            "Length": "27,191",
+            "Executive Power": "6",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Singapore",
+            "Scope": "0.5",
+            "Length": "40,076",
+            "Executive Power": "4",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "3",
+            "Number of Rights": "18"
+        },
+        {
+            "Country": "South Africa",
+            "Scope": "0.64",
+            "Length": "43,062",
+            "Executive Power": "4",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "5",
+            "Number of Rights": "60"
+        },
+        {
+            "Country": "Spain",
+            "Scope": "0.63",
+            "Length": "17,608",
+            "Executive Power": "7",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "1",
+            "Number of Rights": "60"
+        },
+        {
+            "Country": "Sri Lanka",
+            "Scope": "0.67",
+            "Length": "40,085",
+            "Executive Power": "5",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "4",
+            "Number of Rights": "40"
+        },
+        {
+            "Country": "St Lucia",
+            "Scope": "0.61",
+            "Length": "38,271",
+            "Executive Power": "3",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "0",
+            "Number of Rights": "41"
+        },
+        {
+            "Country": "St Kitts and Nevis",
+            "Scope": "0.56",
+            "Length": "49,643",
+            "Executive Power": "3",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "1",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Sudan",
+            "Scope": "0.71",
+            "Length": "26,644",
+            "Executive Power": "6",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "49"
+        },
+        {
+            "Country": "Surinam",
+            "Scope": "0.57",
+            "Length": "12,488",
+            "Executive Power": "3",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "2",
+            "Number of Rights": "48"
+        },
+        {
+            "Country": "Syria",
+            "Scope": "0.63",
+            "Length": "8,154",
+            "Executive Power": "7",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "0",
+            "Number of Rights": "42"
+        },
+        {
+            "Country": "Swaziland",
+            "Scope": "0.66",
+            "Length": "48,604",
+            "Executive Power": "2",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "5",
+            "Number of Rights": "61"
+        },
+        {
+            "Country": "Switzerland",
+            "Scope": "0.63",
+            "Length": "16,484",
+            "Executive Power": "1",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "1",
+            "Number of Rights": "65"
+        },
+        {
+            "Country": "Sweden",
+            "Scope": "0.61",
+            "Length": "13,635",
+            "Executive Power": "5",
+            "Legislative Power": "0.52",
+            "Judicial Independence": "1",
+            "Number of Rights": "34"
+        },
+        {
+            "Country": "Taiwan",
+            "Scope": "0.5",
+            "Length": "11,558",
+            "Executive Power": "2",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "4",
+            "Number of Rights": "29"
+        },
+        {
+            "Country": "Tanzania",
+            "Scope": "0.59",
+            "Length": "35,651",
+            "Executive Power": "3",
+            "Legislative Power": "0.33",
+            "Judicial Independence": "2",
+            "Number of Rights": "38"
+        },
+        {
+            "Country": "Tajikistan",
+            "Scope": "0.63",
+            "Length": "7,917",
+            "Executive Power": "5",
+            "Legislative Power": "0.24",
+            "Judicial Independence": "3",
+            "Number of Rights": "65"
+        },
+        {
+            "Country": "Thailand",
+            "Scope": "0.59",
+            "Length": "7,683",
+            "Executive Power": "5",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "2"
+        },
+        {
+            "Country": "Togo",
+            "Scope": "0.57",
+            "Length": "10,252",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "49"
+        },
+        {
+            "Country": "Turkmenistan",
+            "Scope": "0.5",
+            "Length": "5,735",
+            "Executive Power": "4",
+            "Legislative Power": "0.14",
+            "Judicial Independence": "1",
+            "Number of Rights": "56"
+        },
+        {
+            "Country": "Trinidad and Tobago",
+            "Scope": "0.51",
+            "Length": "32,567",
+            "Executive Power": "3",
+            "Legislative Power": "0.1",
+            "Judicial Independence": "3",
+            "Number of Rights": "33"
+        },
+        {
+            "Country": "Tonga",
+            "Scope": "0.41",
+            "Length": "10,192",
+            "Executive Power": "4",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "20"
+        },
+        {
+            "Country": "Tunisia",
+            "Scope": "0.7",
+            "Length": "9,508",
+            "Executive Power": "7",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "45"
+        },
+        {
+            "Country": "Turkey",
+            "Scope": "0.69",
+            "Length": "29,727",
+            "Executive Power": "5",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "4",
+            "Number of Rights": "68"
+        },
+        {
+            "Country": "Tuvalu",
+            "Scope": "0.4",
+            "Length": "34,801",
+            "Executive Power": "2",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "2",
+            "Number of Rights": "40"
+        },
+        {
+            "Country": "Afghanistan",
+            "Scope": "0.67",
+            "Length": "10,227",
+            "Executive Power": "6",
+            "Legislative Power": "0.38",
+            "Judicial Independence": "2",
+            "Number of Rights": "37"
+        },
+        {
+            "Country": "Albania",
+            "Scope": "0.61",
+            "Length": "13,826",
+            "Executive Power": "5",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "5",
+            "Number of Rights": "77"
+        },
+        {
+            "Country": "Algeria",
+            "Scope": "0.61",
+            "Length": "10,038",
+            "Executive Power": "7",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "1",
+            "Number of Rights": "36"
+        },
+        {
+            "Country": "Argentina",
+            "Scope": "0.64",
+            "Length": "12,514",
+            "Executive Power": "3",
+            "Legislative Power": "0.43",
+            "Judicial Independence": "6",
+            "Number of Rights": "51"
+        },
+        {
+            "Country": "Andorra",
+            "Scope": "0.51",
+            "Length": "8,74",
+            "Executive Power": "6",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "3",
+            "Number of Rights": "51"
+        },
+        {
+            "Country": "Armenia",
+            "Scope": "0.66",
+            "Length": "13,786",
+            "Executive Power": "6",
+            "Legislative Power": "0.29",
+            "Judicial Independence": "4",
+            "Number of Rights": "82"
+        },
+        {
+            "Country": "New Zealand",
+            "Scope": "0.21",
+            "Length": "48,438",
+            "Executive Power": "1",
+            "Legislative Power": "0.19",
+            "Judicial Independence": "4",
+            "Number of Rights": "40"
+        }
+    ]
+}

@@ -1,23 +1,10 @@
-import {
-  Chip,
-  FormControl,
-  FormLabel,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  OutlinedInput,
-  Select,
-  SelectChangeEvent,
-  Slider,
-  Theme,
-  useTheme,
-} from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import { Chip, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, IconButton, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, Slider, Theme, useTheme, Button, styled, Tooltip, TooltipProps, tooltipClasses } from "@mui/material";
+import React, { useContext, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import "../styles/ContainerOptionLeft.css";
 import { Box } from "@mui/system";
-import { getAllConstitutesByFilter, getAllConstitutesByPromulgation } from "../service/Api";
+import { getAllConstitutesByFilter, getAllConstitutesByPromulgation, getConstitutesByTopic } from "../service/Api";
 import { LayoutConfigureContext } from "../context/LayoutConfigureContext";
+import "../styles/ContainerOptionLeft.css";
 
 const ITEM_HEIGHT = 30;
 const ITEM_PADDING_TOP = 8;
@@ -32,7 +19,7 @@ const MenuProps = {
 };
 
 // Lists of continents
-const selectItems = ["America", "Europe", "Asia", "Africa"];
+const selectItems = ["Americas", "Europe", "Asia", "Africa"];
 
 // Style menu
 function getStyles(name: string, personName: readonly string[], theme: Theme) {
@@ -44,13 +31,32 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
   };
 }
 
+// Layout Tooltip
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+    maxWidth: 300,
+    fontWeight: 400
+  },
+}));
+
+const longText = `
+Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
+Praesent non nunc mollis, fermentum neque at, semper arcu.
+Nullam eget est sed sem iaculis gravida eget vitae justo.
+`;
+
 // Props Container Options Left
 interface ContainerOptionsLeftProps {
   containerLeftClose: () => void;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function ContainerOptionsLeft({
   containerLeftClose,
+  setIsOpen
 }: ContainerOptionsLeftProps) {
 
   const dataActual: number = Number(Date().split(" ")[3]);
@@ -60,11 +66,16 @@ export default function ContainerOptionsLeft({
   const [minPromulgation, setMinPromulgation] = useState<number>(1200); // Controla a data de promulgação minima
   const [maxPromulgation, setMaxPromulgation] = useState<number>(dataActual); // Controla a data de promulgação máxima
   const {
-    constitutionSize,
+    constitutionWordsLength,
     setFilter,
-    setConstitutionSize
+    setConstitutionWordsLength,
+    setIsLoading,
+    setCPPFilter,
+    minimumDegree,
+    setMinimumDegree
   } = useContext(LayoutConfigureContext);
 
+  // Seta os continentes que vão ser utilizados na pesquisa  
   function handleChange(event: SelectChangeEvent<typeof selectItems>) {
     const {
       target: { value },
@@ -73,148 +84,247 @@ export default function ContainerOptionsLeft({
     setContinents(typeof value === "string" ? value.split(",") : value);
   }
 
+  // Aplicar filtro  
   function applyFilter() {
+    // Realiza uma busca por range de promulgação
     if (continents.length == 0 || continents.length == selectItems.length) {
+      setIsLoading(true);
       getAllConstitutesByPromulgation(minPromulgation, maxPromulgation)
         .then((data: any) => {
           // Adiciona todas as constituições aos nodes
-          let nodes: string[] = [];
-          data.forEach((node: any) => nodes.push(node.title.replace("_", " ").split(" (")[0]));
+          let nodes: string[] = data.map((elem: any) => {
+            if (elem.word_length >= constitutionWordsLength)
+              return elem.id;
+          });
           setFilter({ nodes });
         })
-        .catch((err: any) => console.log(err));
+        .catch((err: any) => {
+          console.log(err);
+          setIsOpen(true);
+        })
+        .finally(() => setIsLoading(false));
     } else {
+      // Realiza uma busca pelos continentes e range de promulgação
+      setIsLoading(true);
       getAllConstitutesByFilter(continents, minPromulgation, maxPromulgation)
         .then((data: any) => {
+          console.log(data);
           // Adiciona todas as constituições aos nodes
-          let nodes: string[] = [];
-          data.forEach((node: any) => nodes.push(node.title.replace("_", " ").split(" (")[0]));
+          let nodes: string[] = data.map((elem: any) => {
+            if (elem.word_length >= constitutionWordsLength)
+              return elem.id;
+          });
           setFilter({ nodes });
         })
-        .catch((err: any) => console.log(err));
+        .catch((err: any) => {
+          console.log(err);
+          setIsOpen(true);
+        })
+        .finally(() => setIsLoading(false));
     }
-  }
-
-  function removeFilter() {
-    setFilter({ nodes: [] });
   }
 
   return (
     <section className="menuLeft">
+      {/* Botão de fechar */}
       <div className="containerBtnCloseLeft">
         <IconButton color="error" className="closeBtnLeft">
           <CloseIcon onClick={containerLeftClose} />
         </IconButton>
       </div>
+
       <div className="containerLayoutConfigureLeft">
+        {/* Seleciona continentes */}
         <FormControl className="formControlLeft">
           <InputLabel id="demo-multiple-chip-label">Continente</InputLabel>
-          <Select
-            labelId="demo-multiple-chip-label"
-            id="filterContinents"
-            multiple
-            value={continents}
-            onChange={handleChange}
-            input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-            renderValue={(selected) => (
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
-                {selected.map((value) => (
-                  <Chip key={value} label={value} />
-                ))}
-              </Box>
-            )}
-            MenuProps={MenuProps}
-          >
-            {selectItems.map((continent) => (
-              <MenuItem
-                key={continent}
-                value={continent}
-                style={getStyles(continent, continents, theme)}
-              >
-                {continent}
-              </MenuItem>
-            ))}
-          </Select>
+          <LightTooltip
+            title={longText}
+            placement="right"
+            enterDelay={2000}>
+            <Select
+              labelId="demo-multiple-chip-label"
+              id="filterContinents"
+              multiple
+              value={continents}
+              onChange={handleChange}
+              input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+              renderValue={(selected) => (
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
+                  {selected.map((value) => (
+                    <Chip key={value} label={value} />
+                  ))}
+                </Box>
+              )}
+              MenuProps={MenuProps}
+            >
+              {selectItems.map((continent) => (
+                <MenuItem
+                  key={continent}
+                  value={continent}
+                  style={getStyles(continent, continents, theme)}
+                >
+                  {continent}
+                </MenuItem>
+              ))}
+            </Select>
+          </LightTooltip>
         </FormControl>
 
-        <FormControl className="formControlLeft">
-          <FormLabel>Promulgation Data</FormLabel>
-          <p>
-            Minimum Date: <span>{minPromulgation}</span>
-          </p>
-          <Slider
-            size="small"
-            defaultValue={1200}
-            aria-label="Small"
-            valueLabelDisplay="auto"
-            min={1200}
-            max={dataActual}
-            step={10}
-            onChange={(event: any) => { setMinPromulgation(event.target.value) }}
-          />
-        </FormControl>
+        {/* Seleciona a data de promulgação  minima */}
+        <LightTooltip
+          title={longText}
+          placement="right"
+          enterDelay={2000}>
+          <FormControl className="formControlLeft">
+            <FormLabel>Promulgation Data</FormLabel>
+            <p>
+              Minimum Date: <span>{minPromulgation}</span>
+            </p>
+            <Slider
+              size="small"
+              defaultValue={1200}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              min={1200}
+              max={dataActual}
+              step={10}
+              onChange={(event: any) => { setMinPromulgation(event.target.value) }}
+            />
+          </FormControl>
+        </LightTooltip>
 
-        <FormControl className="formControlLeft">
-          <p>
-            Maximum Date: <span>{maxPromulgation}</span>
-          </p>
-          <Slider
-            size="small"
-            defaultValue={dataActual}
-            aria-label="Small"
-            valueLabelDisplay="auto"
-            min={1200}
-            max={dataActual}
-            step={10}
-            onChange={(event: any) => { setMaxPromulgation(event.target.value); }}
-          />
-        </FormControl>
+        {/* Seleciona a data de promulgação máxima */}
+        <LightTooltip
+          title={longText}
+          placement="right"
+          enterDelay={2000}>
+          <FormControl className="formControlLeft">
+            <p>
+              Maximum Date: <span>{maxPromulgation}</span>
+            </p>
+            <Slider
+              size="small"
+              defaultValue={dataActual}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              min={1200}
+              max={dataActual}
+              step={10}
+              onChange={(event: any) => { setMaxPromulgation(event.target.value); }}
+            />
+          </FormControl>
+        </LightTooltip>
+
+        {/* Seleciona o tamanho das constituições */}
+        <LightTooltip
+          title={longText}
+          placement="right"
+          enterDelay={2000}>
+          <FormControl className="formControlLeft">
+            <p>
+              Constitution Size: <span>{constitutionWordsLength}</span>
+            </p>
+            <Slider
+              size="small"
+              defaultValue={0}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              min={0}
+              max={100000}
+              step={10}
+              onChange={(event: any) => setConstitutionWordsLength(Number(event.target.value))}
+            />
+          </FormControl>
+        </LightTooltip>
+        
+        {/* Seleciona o grau dos nós */}
+        <LightTooltip
+          title={longText}
+          placement="left"
+          enterDelay={2000}>
+          <FormControl className="layoutConfigureForm">
+            <FormLabel id="">
+              Minimum Degree: <span>{minimumDegree}</span>
+            </FormLabel>
+            <Slider
+              size="small"
+              defaultValue={0}
+              min={0}
+              max={5}
+              step={1}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              onChange={(event: any) => {
+                setMinimumDegree(event.target.value);
+              }}
+            />
+          </FormControl>
+        </LightTooltip>
+
       </div>
-
+      
       <div className="applyOptionsBtn">
-        <button
-          type="button"
-          className="applyOptionFilterBtn"
-          onClick={applyFilter}>
+        <Button variant="contained" size="small" onClick={applyFilter}>
           Apply
-        </button>
-        <button
-          type="button"
-          className="clearOptionFilterBtn"
-          onClick={removeFilter}>
+        </Button>
+        <Button
+          variant="contained" size="small" color="error" onClick={() => setFilter({ nodes: [] })}>
           Remove
-        </button>
+        </Button>
       </div>
 
+      {/* Define clusters CPP */}
       <div className="containerLayoutConfigureLeft">
-        <FormControl className="formControlLeft">
-          <p>
-            Constitution Size: <span>{constitutionSize}</span>
-          </p>
-          <Slider
-            size="small"
-            defaultValue={constitutionSize}
-            aria-label="Small"
-            valueLabelDisplay="auto"
-            min={0}
-            max={100000}
-            step={10}
-            onChange={(event: any) => { setConstitutionSize(event.target.value); }}
-          />
+        <FormControl className="layoutConfigureForm">
+          <FormLabel id="">Clusters</FormLabel>
+          <LightTooltip
+            title={longText}
+            placement="right"
+            enterDelay={2000}>
+            <RadioGroup
+              row
+              name="radioButtonsGroupResize"
+              id="layoutSelected"
+              defaultValue={0}
+            >
+              <FormControlLabel
+                label="Executive Power"
+                control={<Radio />}
+                value="1"
+                key="executive_power"
+                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
+              />
+              <FormControlLabel
+                label="Legislative Power"
+                control={<Radio />}
+                value="2"
+                key="legislative_power"
+                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
+              />
+              <FormControlLabel
+                label="Judicial Independence"
+                control={<Radio />}
+                value="3"
+                key="judicial_independence"
+                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
+              />
+              <FormControlLabel
+                label="Number of Rights"
+                control={<Radio />}
+                value="4"
+                key="number_rights"
+                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
+              />
+              <FormControlLabel
+                label="Normal"
+                control={<Radio />}
+                value="0"
+                key="normal"
+                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
+              />
+            </RadioGroup>
+          </LightTooltip>
         </FormControl>
-      </div>
-
-      <div className="applyOptionsBtn">
-        <button
-          type="button"
-          className="applyOptionFilterBtn">
-          Apply
-        </button>
-        <button
-          type="button"
-          className="clearOptionFilterBtn">
-          Remove
-        </button>
       </div>
     </section>
   );

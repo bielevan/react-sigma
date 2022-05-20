@@ -1,4 +1,4 @@
-export default function setDistanceCosine(
+function setDistanceCosine(
   vectorA: number[],
   vectorB: number[]
 ) {
@@ -16,3 +16,15 @@ export default function setDistanceCosine(
   return cos;
 }
 
+function setDistanceEuclidian(
+  vectorA: number[],
+  vectorB: number[]
+) {
+  let norm = Math.pow(vectorA[0]-vectorB[0], 2) + Math.pow(vectorA[1]-vectorB[1], 2);
+  return Math.sqrt(norm);
+}
+
+export {
+  setDistanceCosine,
+  setDistanceEuclidian
+}

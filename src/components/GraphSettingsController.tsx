@@ -27,6 +27,9 @@ export default function GraphSettingController({
     );
   }, [sigma, graph]);
 
+  /**
+   * Aplica efeito de mouse in e mouse out
+   *  */ 
   useEffect(() => {
     const hoveredColor: string = debouncedHoveredNode
       ? sigma.getNodeDisplayData(debouncedHoveredNode)!.color

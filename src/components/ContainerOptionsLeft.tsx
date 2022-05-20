@@ -36,7 +36,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: "#2980b9",
     maxWidth: 300,
     fontWeight: 400
   },
@@ -108,7 +108,6 @@ export default function ContainerOptionsLeft({
       setIsLoading(true);
       getAllConstitutesByFilter(continents, minPromulgation, maxPromulgation)
         .then((data: any) => {
-          console.log(data);
           // Adiciona todas as constituições aos nodes
           let nodes: string[] = data.map((elem: any) => {
             if (elem.word_length >= constitutionWordsLength)
@@ -136,37 +135,39 @@ export default function ContainerOptionsLeft({
       <div className="containerLayoutConfigureLeft">
         {/* Seleciona continentes */}
         <FormControl className="formControlLeft">
-          <InputLabel id="demo-multiple-chip-label">Continente</InputLabel>
           <LightTooltip
             title={longText}
             placement="right"
             enterDelay={2000}>
-            <Select
-              labelId="demo-multiple-chip-label"
-              id="filterContinents"
-              multiple
-              value={continents}
-              onChange={handleChange}
-              input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-              renderValue={(selected) => (
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
-                  {selected.map((value) => (
-                    <Chip key={value} label={value} />
-                  ))}
-                </Box>
-              )}
-              MenuProps={MenuProps}
-            >
-              {selectItems.map((continent) => (
-                <MenuItem
-                  key={continent}
-                  value={continent}
-                  style={getStyles(continent, continents, theme)}
-                >
-                  {continent}
-                </MenuItem>
-              ))}
-            </Select>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+              <InputLabel id="multiple-chip-label">Continents</InputLabel>
+              <Select
+                labelId="multiple-chip-label"
+                id="multiple-chip-label"
+                multiple
+                value={continents}
+                onChange={handleChange}
+                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                renderValue={(selected) => (
+                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
+                    {selected.map((value) => (
+                      <Chip key={value} label={value} />
+                    ))}
+                  </Box>
+                )}
+                MenuProps={MenuProps}
+              >
+                {selectItems.map((continent) => (
+                  <MenuItem
+                    key={continent}
+                    value={continent}
+                    style={getStyles(continent, continents, theme)}
+                  >
+                    {continent}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </LightTooltip>
         </FormControl>
 
@@ -176,10 +177,10 @@ export default function ContainerOptionsLeft({
           placement="right"
           enterDelay={2000}>
           <FormControl className="formControlLeft">
-            <FormLabel>Promulgation Data</FormLabel>
-            <p>
-              Minimum Date: <span>{minPromulgation}</span>
-            </p>
+            <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Promulgation Data</FormLabel>
+            <FormLabel sx={{ fontSize: "0.8rem" }}>
+              Minimum Date: {minPromulgation}
+            </FormLabel>
             <Slider
               size="small"
               defaultValue={1200}
@@ -199,9 +200,9 @@ export default function ContainerOptionsLeft({
           placement="right"
           enterDelay={2000}>
           <FormControl className="formControlLeft">
-            <p>
-              Maximum Date: <span>{maxPromulgation}</span>
-            </p>
+            <FormLabel sx={{ fontSize: "0.8rem" }}>
+              Maximum Date: {maxPromulgation}
+            </FormLabel>
             <Slider
               size="small"
               defaultValue={dataActual}
@@ -221,9 +222,9 @@ export default function ContainerOptionsLeft({
           placement="right"
           enterDelay={2000}>
           <FormControl className="formControlLeft">
-            <p>
-              Constitution Size: <span>{constitutionWordsLength}</span>
-            </p>
+            <FormLabel sx={{ fontSize: "0.8rem" }}>
+              Constitution Size: {constitutionWordsLength}
+            </FormLabel>
             <Slider
               size="small"
               defaultValue={0}
@@ -236,15 +237,15 @@ export default function ContainerOptionsLeft({
             />
           </FormControl>
         </LightTooltip>
-        
+
         {/* Seleciona o grau dos nós */}
         <LightTooltip
           title={longText}
           placement="left"
           enterDelay={2000}>
           <FormControl className="layoutConfigureForm">
-            <FormLabel id="">
-              Minimum Degree: <span>{minimumDegree}</span>
+            <FormLabel sx={{ fontSize: "0.8rem" }}>
+              Minimum Degree: {minimumDegree}
             </FormLabel>
             <Slider
               size="small"
@@ -262,7 +263,7 @@ export default function ContainerOptionsLeft({
         </LightTooltip>
 
       </div>
-      
+
       <div className="applyOptionsBtn">
         <Button variant="contained" size="small" onClick={applyFilter}>
           Apply
@@ -276,17 +277,18 @@ export default function ContainerOptionsLeft({
       {/* Define clusters CPP */}
       <div className="containerLayoutConfigureLeft">
         <FormControl className="layoutConfigureForm">
-          <FormLabel id="">Clusters</FormLabel>
-          <LightTooltip
-            title={longText}
-            placement="right"
-            enterDelay={2000}>
-            <RadioGroup
-              row
-              name="radioButtonsGroupResize"
-              id="layoutSelected"
-              defaultValue={0}
-            >
+          <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Clusters</FormLabel>
+          <RadioGroup
+            row
+            name="radioButtonsGroupResize"
+            className="radioButtonsGroup"
+            id="layoutSelected"
+            defaultValue={0}
+          >
+            <LightTooltip
+              title={longText}
+              placement="right"
+              enterDelay={2000}>
               <FormControlLabel
                 label="Executive Power"
                 control={<Radio />}
@@ -294,6 +296,11 @@ export default function ContainerOptionsLeft({
                 key="executive_power"
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
+            </LightTooltip>
+            <LightTooltip
+              title={longText}
+              placement="right"
+              enterDelay={2000}>
               <FormControlLabel
                 label="Legislative Power"
                 control={<Radio />}
@@ -301,6 +308,11 @@ export default function ContainerOptionsLeft({
                 key="legislative_power"
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
+            </LightTooltip>
+            <LightTooltip
+              title={longText}
+              placement="right"
+              enterDelay={2000}>
               <FormControlLabel
                 label="Judicial Independence"
                 control={<Radio />}
@@ -308,6 +320,11 @@ export default function ContainerOptionsLeft({
                 key="judicial_independence"
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
+            </LightTooltip>
+            <LightTooltip
+              title={longText}
+              placement="right"
+              enterDelay={2000}>
               <FormControlLabel
                 label="Number of Rights"
                 control={<Radio />}
@@ -315,6 +332,11 @@ export default function ContainerOptionsLeft({
                 key="number_rights"
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
+            </LightTooltip>
+            <LightTooltip
+              title={longText}
+              placement="right"
+              enterDelay={2000}>
               <FormControlLabel
                 label="Normal"
                 control={<Radio />}
@@ -322,10 +344,10 @@ export default function ContainerOptionsLeft({
                 key="normal"
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
-            </RadioGroup>
-          </LightTooltip>
+            </LightTooltip>
+          </RadioGroup>
         </FormControl>
       </div>
-    </section>
+    </section >
   );
 }

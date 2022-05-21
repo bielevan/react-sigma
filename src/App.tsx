@@ -1,9 +1,10 @@
-import { IconButton, Slide, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, PaperProps, Paper, Fab } from "@mui/material"
+import { IconButton, Slide, Button, Dialog, DialogActions, Snackbar, Stack, DialogContent, DialogContentText, DialogTitle, PaperProps, Paper, Fab } from "@mui/material"
 import { TransitionProps } from "@mui/material/transitions";
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
 
 import ArrowBackIosOutlinedIcon from "@mui/icons-material//ArrowBackIosOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
-import AddIcon from '@mui/icons-material/Add';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import MouseIcon from "@mui/icons-material/Mouse";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
@@ -22,10 +23,17 @@ import GraphSettingController from "./components/GraphSettingsController";
 
 import drawLabel from "./service/canvas-utils";
 import ShowClusters from "./components/ShowClusters";
-import Draggable from 'react-draggable';
 import "./styles/App.css";
 import "react-sigma-v2/lib/react-sigma-v2.css";
 import ShowFilter from "./components/ShowFilter";
+
+// Alert error
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 // Efeito transition Dialog
 const Transition = React.forwardRef(function Transaction(
@@ -40,12 +48,21 @@ const Transition = React.forwardRef(function Transaction(
 export default function App() {
 
   const [open, setIsOpen] = useState<boolean>(false);                         // Abre menu de erro
+  const [openPopupProject, setOpenPopupProject] = useState<boolean>(false);   // Abre popup para apresentação do projeto
   const [openClusterPopup, setOpenClusterPopup] = useState<boolean>(false);   // Abre menu para demonstrar informações sobre cluter
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);        // Controla node mouse_enter
   const [mouseEvent, setMouseEvent] = useState<boolean>(true);                // Controla se habilita ou não eventos do mouse  
   const [clusterSelected, setClusterSelected] = useState<number>(-1);         // Cluster selecionado pelo usuário
   const [containerFilterControl, setContainerFilterControl] = useState<boolean>(false);
   const { isLoading } = useContext(LayoutConfigureContext);
+
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setIsOpen(false);
+  };
 
   // Controle abertura painel esquerdo  
   function openContainerFilterLeft() {
@@ -78,23 +95,39 @@ export default function App() {
   return (
     <section className="graphContainer">
 
-      {/* Dialog para erro de acesso ao backend */}
+      {/* Dialog de apresentação do projeto */}
       <Dialog
-        open={open}
+        open={openPopupProject}
         TransitionComponent={Transition}
         keepMounted
-        onClose={() => setIsOpen(false)}
+        onClose={() => setOpenPopupProject(false)}
         aria-describedby="alert-dialog-slide-description">
-        <DialogTitle>{"Erro ao acessar backend"}</DialogTitle>
+        <DialogTitle>{"Title"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Erro ao acessar backend, não possível obter os resultados esperados
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setIsOpen(false)}>Close</Button>
+          <Button onClick={() => setOpenPopupProject(false)}>Close</Button>
         </DialogActions>
       </Dialog>
+
+      {/* Dialog para erro de acesso ao backend */}
+      <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: '80%' }}>
+            Erro ao acessar backend, não possível obter os resultados esperados
+          </Alert>
+        </Snackbar>
+      </Stack>
 
       {/* Tela de Loading */}
       {isLoading && <Loading />}
@@ -179,7 +212,7 @@ export default function App() {
           aria-label="add"
           size="small"
           onClick={openContainerFilterFooter}>
-          <AddIcon />
+          <FilterAltOutlinedIcon />
         </Fab>
 
         <Fab
@@ -193,7 +226,8 @@ export default function App() {
         <Fab
           color="warning"
           aria-label="mouse"
-          size="small">
+          size="small"
+          onClick={() => setOpenPopupProject(true)}>
           <InfoOutlinedIcon />
         </Fab>
       </footer>

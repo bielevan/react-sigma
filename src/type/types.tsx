@@ -7,7 +7,6 @@ export interface Dataset {
         cluster: number;
     }[];
     edges: {}[];
-    clusters: number;
 }
 
 export interface Filter {

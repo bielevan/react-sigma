@@ -19,11 +19,12 @@ export async function getAllConstitutesByFilter(continents: string[], minPromulg
 }
 
 // Obtem os clusters via KMeans
-export async function getClusterByKMeans(nodes: any[], n_clusters: number) {
+export async function getClusterByKMeans(nodes: any[], min_clusters: number, max_clusters: number) {
     let url = 'http://localhost:5000/kmeans';
     let data: any = {
         "nodes": nodes,
-        "n_cluster": n_clusters
+        "min_clusters": min_clusters,
+        "max_clusters": max_clusters
     };
     return api.post(url, data, {
         headers: { 

@@ -46,8 +46,6 @@ export default function ContainerOptionsRight({
   ...props
 }: ContainerOptionsRightProps) {
 
-  const [showLevel, setShowLevel] = useState<boolean>(false);
-  const [showVectors, setShowVectors] = useState<boolean>(false);
   const [showDistance, setShowDistance] = useState<number>(0);
 
   const {
@@ -61,17 +59,9 @@ export default function ContainerOptionsRight({
     setApplyConfigure,
     setAlgoritmo,
     setTypeReduce,
-    setLevelNeighbors,
-    setEmbbeddings,
     setClustering,
     setWhoDistance
   } = useContext(LayoutConfigureContext);
-
-  function setSelectedAlgoritm(algoritmoSelect: string) {
-    setAlgoritmo(algoritmoSelect);
-    setShowLevel(algoritmoSelect   == 'network' ? true : false);
-    setShowVectors(algoritmoSelect == 'doc2vec' ? true : false);
-  }
 
   // Reseta todas as propriedades do grafo  
   function resetGraph() {
@@ -104,7 +94,7 @@ export default function ContainerOptionsRight({
                 id="select-small"
                 label="Algoritmo"
                 value={algoritmo}
-                onChange={(event: SelectChangeEvent) => setSelectedAlgoritm(event.target.value)}
+                onChange={(event: SelectChangeEvent) => setAlgoritmo(event.target.value)}
               >
                 <MenuItem value={'tfidf'}>TF-IDF</MenuItem>
                 <MenuItem value={'doc2vec'}>Doc2Vec</MenuItem>
@@ -134,51 +124,6 @@ export default function ContainerOptionsRight({
             </RadioGroup>
           </LightTooltip>
         </FormControl>
-
-
-        {showLevel && (
-          // Define o level da conexão entre vizinhos no grafo para Network
-          <FormControl className="layoutConfigureForm">
-            <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Level</FormLabel>
-            <LightTooltip
-              title={longText}
-              placement="left"
-              enterDelay={2000}>
-              <RadioGroup
-                row
-                name="radioButtonsGroupResize"
-                className="radioBtnsLayout"
-                onChange={(event: any) => setLevelNeighbors(Number(event.target.value))}
-              >
-                <FormControlLabel label="1" control={<Radio />} value="1" />
-                <FormControlLabel label="2" control={<Radio />} value="2" />
-                <FormControlLabel label="3" control={<Radio />} value="3" />
-              </RadioGroup>
-            </LightTooltip>
-          </FormControl>
-        )}
-
-        {showVectors && (
-          // Define o tamanho do vetor de embeddings
-          <FormControl className="layoutConfigureForm">
-            <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Embeddings</FormLabel>
-            <LightTooltip
-              title={longText}
-              placement="left"
-              enterDelay={2000}>
-              <RadioGroup
-                row
-                name="radioButtonsGroupResize"
-                className="radioBtnsLayout"
-                onChange={(event: any) => setEmbbeddings(Number(event.target.value))}
-              >
-                <FormControlLabel label="100" control={<Radio />} value="100" />
-                <FormControlLabel label="200" control={<Radio />} value="200" />
-                <FormControlLabel label="300" control={<Radio />} value="300" />
-              </RadioGroup>
-            </LightTooltip>
-          </FormControl>
-        )}
 
         {/* Valida a distancia que será utilizada */}
         <FormControl className="layoutConfigureForm">
@@ -251,7 +196,7 @@ export default function ContainerOptionsRight({
                 size="small"
                 defaultValue={0}
                 min={0}
-                max={5}
+                max={8}
                 step={0.1}
                 aria-label="Small"
                 valueLabelDisplay="auto"
@@ -275,7 +220,7 @@ export default function ContainerOptionsRight({
               size="small"
               defaultValue={0}
               min={0}
-              max={7}
+              max={8}
               step={1}
               aria-label="Small"
               valueLabelDisplay="auto"

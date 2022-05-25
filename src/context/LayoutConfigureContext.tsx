@@ -4,15 +4,15 @@ import React from "react";
 import {
     dataset_tfidf_pca,
     dataset_tfidf_tsne,
-    dataset_network_pca_1,
-    dataset_network_tsne_1
+    dataset_network_pca,
+    dataset_network_tsne,
+    dataset_doc2vec_pca,
+    dataset_doc2vec_tsne
 } from "./ImportDataset";
 
 interface LayoutConfigureContextProps {
     algoritmo: string;
     typeReduce: string;
-    levelNeighbors: number;
-    embeddings: number;
     datasetAnimate: Dataset;
     applyConfigure: boolean;
     distance: number;
@@ -29,8 +29,6 @@ interface LayoutConfigureContextProps {
     whoDistance: number;
     setAlgoritmo:       React.Dispatch<React.SetStateAction<string>>;
     setTypeReduce:      React.Dispatch<React.SetStateAction<string>>;
-    setLevelNeighbors:  React.Dispatch<React.SetStateAction<number>>;
-    setEmbbeddings:     React.Dispatch<React.SetStateAction<number>>;
     setApplyConfigure:  React.Dispatch<React.SetStateAction<boolean>>;
     setDistance:        React.Dispatch<React.SetStateAction<number>>;
     setMaximumConnectedNeighbors: React.Dispatch<React.SetStateAction<number>>;
@@ -53,9 +51,7 @@ export const LayoutConfigureContext = createContext({} as LayoutConfigureContext
 export default function LayoutConfigureProvider({ children }: LayoutConfigureProviderProps) {
 
     const [algoritmo, setAlgoritmo] = useState<string>('tfidf');            // Define qual algoritmo utilizará para a construção da rede
-    const [typeReduce, setTypeReduce] = useState<string>("TSNE");           // Define o tipo de algoritmo para diminuição da dimensionalidade
-    const [levelNeighbors, setLevelNeighbors] = useState<number>(0);        // Define o nível de conexões para o algoritmo de Redes complexas
-    const [embeddings, setEmbbeddings] = useState<number>(0);               // Define o número de vertores de embeddings para algoritmo Doc2Vec
+    const [typeReduce, setTypeReduce] = useState<string>('TSNE');           // Define o tipo de algoritmo para diminuição da dimensionalidade
     const [distance, setDistance] = useState<number>(0);                    // Define o valor para simetria de cosseno/euclidiana
     const [whoDistance, setWhoDistance] = useState<number>(0);              // Verifica qual a distância foi escolhida 
     const [maximumConnectedNeighbors, setMaximumConnectedNeighbors] = useState<number>(0); // Define o número máximo de vizinhos conectados
@@ -89,9 +85,11 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
 
         let dataset: Dataset = {
             nodes: [],
-            clusters: 0,
             edges: []
         };
+
+        console.log(algoritmo);
+        console.log(typeReduce);
 
         switch (algoritmo) {
             case 'tfidf':
@@ -100,13 +98,11 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
                 break;
             case 'doc2vec':
                 // Doc2Vec
+                dataset = typeReduce == "TSNE" ? dataset_doc2vec_tsne : dataset_doc2vec_pca;
                 break;
             case 'network':
                 // Network
-                if (typeReduce == "TSNE")
-                    dataset = levelNeighbors == 1 ? dataset_network_tsne_1 : dataset;
-                else
-                    dataset = levelNeighbors == 1 ? dataset_network_pca_1 : dataset;
+                dataset = typeReduce == "TSNE" ? dataset_network_tsne : dataset_network_pca;
                 break;
             case 'cpp':
                 // CPP
@@ -127,8 +123,6 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
         <LayoutConfigureContext.Provider value={{
             algoritmo,
             typeReduce,
-            levelNeighbors,
-            embeddings,
             datasetAnimate,
             applyConfigure,
             distance,
@@ -146,8 +140,6 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             setFilter,
             setAlgoritmo,
             setTypeReduce,
-            setLevelNeighbors,
-            setEmbbeddings,
             setApplyConfigure,
             setDistance,
             setMaximumConnectedNeighbors,

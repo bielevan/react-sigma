@@ -163,8 +163,6 @@ export default function GraphEventsController({
             target: edge.nodeB
           });
         });
-      
-      console.log(similarities.sort((edgeA, edgeB) => edgeA.distance - edgeB.distance))
     });
   }
 
@@ -242,7 +240,7 @@ export default function GraphEventsController({
 
       // Realiza a chamada API para obter os clusters por KMeans
       setIsLoading(true);
-      getClusterByKMeans(nodes, n_clusters)
+      getClusterByKMeans(nodes, 2, 30)
         .then((data) => {
           let clusters: number[] = data['clusters'];
           let labels: string[] = data['labels'];
@@ -261,6 +259,7 @@ export default function GraphEventsController({
         })
         .finally(() => setIsLoading(false))
     }
+    
     // Clusterização Fast Greedy
     else if (clustering == 2) {
       let nodes: any[] = []

@@ -27,6 +27,7 @@ interface LayoutConfigureContextProps {
     applyConstructGraph: boolean;
     cppFilter: number;
     whoDistance: number;
+    filterByName: string;
     setAlgoritmo:       React.Dispatch<React.SetStateAction<string>>;
     setTypeReduce:      React.Dispatch<React.SetStateAction<string>>;
     setApplyConfigure:  React.Dispatch<React.SetStateAction<boolean>>;
@@ -40,6 +41,7 @@ interface LayoutConfigureContextProps {
     setIsLoading:       React.Dispatch<React.SetStateAction<boolean>>;
     setCPPFilter:       React.Dispatch<React.SetStateAction<number>>;
     setWhoDistance:     React.Dispatch<React.SetStateAction<number>>;
+    setFilterByName:    React.Dispatch<React.SetStateAction<string>>;
 }
 
 interface LayoutConfigureProviderProps {
@@ -66,7 +68,8 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
     const [isLoading, setIsLoading] = useState<boolean>(false);             // Habilita a tela de Loading
     const [applyConstructGraph, setApplyContructGraph] = useState<boolean>(false);
     const [cppFilter, setCPPFilter] = useState<number>(0);
-    
+    const [filterByName, setFilterByName] = useState<string>("");
+
     /**
      * Trigger para obter layout 
      */
@@ -87,9 +90,6 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             nodes: [],
             edges: []
         };
-
-        console.log(algoritmo);
-        console.log(typeReduce);
 
         switch (algoritmo) {
             case 'tfidf':
@@ -137,6 +137,7 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             applyConstructGraph,
             cppFilter,
             whoDistance,
+            filterByName,
             setFilter,
             setAlgoritmo,
             setTypeReduce,
@@ -149,7 +150,8 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             setClustering,
             setIsLoading,
             setCPPFilter,
-            setWhoDistance
+            setWhoDistance,
+            setFilterByName
         }}>
             {children}
         </LayoutConfigureContext.Provider>

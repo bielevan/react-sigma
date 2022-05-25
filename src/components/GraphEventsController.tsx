@@ -46,7 +46,8 @@ export default function GraphEventsController({
     clustering,                                 // Processo de clusterização
     constructLayoutAfterApply,                  // Aplica a mudança no gráfico
     setIsLoading,                               // Habilita/Desabilita tela de Loading
-    whoDistance                                 // Verifica qual a distancia a ser usada  
+    whoDistance,                                // Verifica qual a distancia a ser usada  
+    filterByName
   } = useContext(LayoutConfigureContext);
 
   /**
@@ -304,6 +305,11 @@ export default function GraphEventsController({
         .finally(() => setIsLoading(false))
     }
   }, [constructLayoutAfterApply]);
+
+  // Filter by name
+  useEffect(() => {
+    console.log(filterByName);
+  }, [filterByName]);  
 
   return <>{children}</>;
 }

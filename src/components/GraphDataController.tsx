@@ -46,7 +46,8 @@ export default function GraphDataController({ children }: GraphDataControllerPro
                 color: '#95a5a6',
                 cluster: node.cluster,
                 size: 8.0,
-                id: node.id
+                id: node.id,
+                borderColor: "#000"
             });
         });
 

@@ -1,4 +1,9 @@
-import { Chip, FormControl, FormControlLabel, Radio, RadioGroup, FormLabel, IconButton, InputLabel, MenuItem, OutlinedInput, Select, SelectChangeEvent, Slider, Theme, useTheme, Button, styled, Tooltip, TooltipProps, tooltipClasses } from "@mui/material";
+import { 
+    Chip, FormControl, FormControlLabel, Radio, RadioGroup, 
+    FormLabel, IconButton, InputLabel, MenuItem, OutlinedInput, 
+    Select, SelectChangeEvent, Slider, Theme, useTheme, Button, 
+    styled, Tooltip, TooltipProps, tooltipClasses, TextField 
+} from "@mui/material";
 import React, { useContext, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box } from "@mui/system";
@@ -42,12 +47,6 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-const longText = `
-Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
-Praesent non nunc mollis, fermentum neque at, semper arcu.
-Nullam eget est sed sem iaculis gravida eget vitae justo.
-`;
-
 // Props Container Options Left
 interface ContainerOptionsLeftProps {
   containerLeftClose: () => void;
@@ -72,7 +71,8 @@ export default function ContainerOptionsLeft({
     setIsLoading,
     setCPPFilter,
     minimumDegree,
-    setMinimumDegree
+    setMinimumDegree,
+    setFilterByName
   } = useContext(LayoutConfigureContext);
 
   // Seta os continentes que vão ser utilizados na pesquisa  
@@ -136,9 +136,11 @@ export default function ContainerOptionsLeft({
         {/* Seleciona continentes */}
         <FormControl className="formControlLeft">
           <LightTooltip
-            title={longText}
+            title={`
+              Filtra os constinentes que devem aparecer na pesquisa
+            `}
             placement="right"
-            enterDelay={2000}>
+            enterDelay={3000}>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="multiple-chip-label">Continents</InputLabel>
               <Select
@@ -173,9 +175,11 @@ export default function ContainerOptionsLeft({
 
         {/* Seleciona a data de promulgação  minima */}
         <LightTooltip
-          title={longText}
+          title={`
+            Data de promulgação mínima da constituição
+          `}
           placement="right"
-          enterDelay={2000}>
+          enterDelay={3000}>
           <FormControl className="formControlLeft">
             <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Promulgation Data</FormLabel>
             <FormLabel sx={{ fontSize: "0.8rem" }}>
@@ -196,9 +200,11 @@ export default function ContainerOptionsLeft({
 
         {/* Seleciona a data de promulgação máxima */}
         <LightTooltip
-          title={longText}
+          title={`
+            Data de promulgação máxima da constituição
+          `}
           placement="right"
-          enterDelay={2000}>
+          enterDelay={3000}>
           <FormControl className="formControlLeft">
             <FormLabel sx={{ fontSize: "0.8rem" }}>
               Maximum Date: {maxPromulgation}
@@ -218,9 +224,11 @@ export default function ContainerOptionsLeft({
 
         {/* Seleciona o tamanho das constituições */}
         <LightTooltip
-          title={longText}
+          title={`
+            Define a quantidade mínima de palavras que uma constituição deve ter
+          `}
           placement="right"
-          enterDelay={2000}>
+          enterDelay={3000}>
           <FormControl className="formControlLeft">
             <FormLabel sx={{ fontSize: "0.8rem" }}>
               Constitution Size: {constitutionWordsLength}
@@ -240,9 +248,11 @@ export default function ContainerOptionsLeft({
 
         {/* Seleciona o grau dos nós */}
         <LightTooltip
-          title={longText}
+          title={`
+            Define o o grau (quantidade de conexões) que uma constituição deve ter na rede
+          `}
           placement="left"
-          enterDelay={2000}>
+          enterDelay={3000}>
           <FormControl className="layoutConfigureForm">
             <FormLabel sx={{ fontSize: "0.8rem" }}>
               Minimum Degree: {minimumDegree}
@@ -277,7 +287,7 @@ export default function ContainerOptionsLeft({
       {/* Define clusters CPP */}
       <div className="containerLayoutConfigureLeft">
         <FormControl className="layoutConfigureForm">
-          <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Clusters</FormLabel>
+          <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600, marginTop: "1rem" }}>Clusters</FormLabel>
           <RadioGroup
             row
             name="radioButtonsGroupResize"
@@ -286,9 +296,13 @@ export default function ContainerOptionsLeft({
             defaultValue={0}
           >
             <LightTooltip
-              title={longText}
+              title={`
+              This is an additive index drawn from a working paper, Constitutional Constraints on Executive Lawmaking. 
+              The index ranges from 0-7 and captures the presence or absence of seven important aspects of executive 
+              lawmaking
+              `}
               placement="right"
-              enterDelay={2000}>
+              enterDelay={3000}>
               <FormControlLabel
                 label="Executive Power"
                 control={<Radio />}
@@ -298,9 +312,11 @@ export default function ContainerOptionsLeft({
               />
             </LightTooltip>
             <LightTooltip
-              title={longText}
+              title={`
+              This captures the formal degree of power assigned to the legislature by the constitution.
+              `}
               placement="right"
-              enterDelay={2000}>
+              enterDelay={3000}>
               <FormControlLabel
                 label="Legislative Power"
                 control={<Radio />}
@@ -310,9 +326,12 @@ export default function ContainerOptionsLeft({
               />
             </LightTooltip>
             <LightTooltip
-              title={longText}
+              title={`
+              It is an additive index ranging from 0-6 that captures the constitutional presence or absence 
+              of six features thought to enhance judicial independence. 
+              `}
               placement="right"
-              enterDelay={2000}>
+              enterDelay={3000}>
               <FormControlLabel
                 label="Judicial Independence"
                 control={<Radio />}
@@ -322,9 +341,12 @@ export default function ContainerOptionsLeft({
               />
             </LightTooltip>
             <LightTooltip
-              title={longText}
+              title={`
+                Set of 1172 different rights found in national constitutions. The rights index indicates 
+                the number of these rights found in any particular constitution.
+              `}
               placement="right"
-              enterDelay={2000}>
+              enterDelay={3000}>
               <FormControlLabel
                 label="Number of Rights"
                 control={<Radio />}
@@ -333,19 +355,17 @@ export default function ContainerOptionsLeft({
                 onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
               />
             </LightTooltip>
-            <LightTooltip
-              title={longText}
-              placement="right"
-              enterDelay={2000}>
-              <FormControlLabel
-                label="Normal"
-                control={<Radio />}
-                value="0"
-                key="normal"
-                onClick={(event: any) => { setCPPFilter(Number(event.target.value)) }}
-              />
-            </LightTooltip>
           </RadioGroup>
+        </FormControl>
+      </div>
+
+      <div className="containerLayoutConfigureLeft">
+        <FormControl className="layoutConfigureForm" sx={{ marginBottom: "1rem", width: "85%", marginLeft: "auto", marginRight: "auto" }}>
+            <TextField 
+              id="constituteFilter" 
+              label="Search" 
+              variant="outlined" 
+              size="small"></TextField>
         </FormControl>
       </div>
     </section >

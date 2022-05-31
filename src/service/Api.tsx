@@ -20,7 +20,7 @@ export async function getAllConstitutesByFilter(continents: string[], minPromulg
 
 // Obtem os clusters via KMeans
 export async function getClusterByKMeans(nodes: any[], min_clusters: number, max_clusters: number) {
-    let url = 'http://localhost:5000/kmeans';
+    let url = 'http://localhost:8000/kmeans';
     let data: any = {
         "nodes": nodes,
         "min_clusters": min_clusters,
@@ -36,7 +36,7 @@ export async function getClusterByKMeans(nodes: any[], min_clusters: number, max
 
 // Obtem os clusters via Fast Greedy
 export async function getClustersByFastyGreedy(nodes: any[], edges: any[], n_clusters: number) {
-    let url = 'http://localhost:5000/fastgreedy';
+    let url = 'http://localhost:8000/fastgreedy';
     let data = {
         "nodes": nodes,
         "edges": edges,

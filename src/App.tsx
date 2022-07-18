@@ -102,17 +102,17 @@ export default function App() {
         keepMounted
         onClose={() => setOpenPopupProject(false)}
         aria-describedby="alert-dialog-slide-description">
-        <DialogTitle>{"Title"}</DialogTitle>
+        <DialogTitle>{"Conweb - Platform for visualization and analysis of constitutions"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
+            Constitutions are a very important milestone in the history of any country, where each one
+            represents a set of rules, laws and norms valid in those territories, organizing all the possible
+            actions of the State. The identification of patterns among these texts is a opportunity for a better
+            understanding of the similarities and differences that may exist among the countries. The work
+            uses Text Mining techniques to group these documents using Machine Learning models widely
+            used in the literature: TF-IDF, Doc2Vec and Complex Networks. All the results and analyzes
+            made possible by each model can be explored through the developed web platform, allowing the
+            user to interact with the networks of constitutions built and apply different filters.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

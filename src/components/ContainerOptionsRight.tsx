@@ -89,21 +89,21 @@ export default function ContainerOptionsRight({
           <CloseIcon onClick={props.containerRightClose} />
         </IconButton>
       </div>
-      <div className="containerLayoutConfigure">
 
+      <div className="containerLayoutConfigure">
         <List
           sx={{
             width: '92%',
           }}>
-          <Divider component="li" />
+          <Divider component="li" sx={{background: "#3498db"}} />
           <li>
             <Typography
               sx={{ mt: 0.5, ml: 2 }}
-              color="text.secondary"
+              color="#3498db"
               display="block"
               variant="caption"
             >
-              Teste
+              Settings
             </Typography>
           </li>
           <ListItem>
@@ -112,14 +112,13 @@ export default function ContainerOptionsRight({
               <FormControl className="layoutConfigureForm">
                 <LightTooltip
                   title={`
-              Defina o modelo ML para os estudos. A plataforma oferece três modelos: 
-              TF-IDF é um modelo estatístico que expressa a importância de uma palavra 
-              em um contexto de documentos; Doc2Vec é um modelo de representação númerica
-              construído com Deep Learning que sintetiza as relações entre palavras com 
-              base em vetores; por último Network constroi um documento com Redes Complexas,
-              relacionando as palavras entre si e extraindo medidas significativas da rede
-              resultante. Cada modelo possui resultados próprios.
-            `}
+                    Define the ML model for the studies. The platform offers three models: 
+                    TF-IDF is a statistical model that expresses the importance of a word in a document 
+                    context; Doc2Vec is a numerical representation model built with Deep Learning that 
+                    synthesizes the relationships between words based on vectors; finally Network builds a document 
+                    with Complex Networks, relating words to each other and extracting meaningful measurements from 
+                    the resulting network. Each model has its own results.
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -134,7 +133,6 @@ export default function ContainerOptionsRight({
                       <MenuItem value={'tfidf'}>TF-IDF</MenuItem>
                       <MenuItem value={'doc2vec'}>Doc2Vec</MenuItem>
                       <MenuItem value={'network'}>Network</MenuItem>
-                      <MenuItem value={'cpp'}>CPP</MenuItem>
                     </Select>
                   </FormControl>
                 </LightTooltip>
@@ -145,11 +143,11 @@ export default function ContainerOptionsRight({
                 <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Resize</FormLabel>
                 <LightTooltip
                   title={`
-              Cada modelo extra relações entre os textos e gera resultados em alta dimensão.
-              A visualização 2D na plataforma é permitido com base na redução do resultado para
-              2 dimensões. Essa tarefa é realizado pelos algoritmos PCA ou t-SNE. Cada
-              algoritmo possui resultados próprios.
-            `}
+                    Each model extracts relationships between texts and generates high-dimensional 
+                    results. 2D visualization on the platform is allowed based on reducing the 
+                    result to 2 dimensions. This task is performed by the PCA or t-SNE algorithms. 
+                    Each algorithm has its own results.
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <RadioGroup
@@ -170,10 +168,11 @@ export default function ContainerOptionsRight({
                 <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Distance</FormLabel>
                 <LightTooltip
                   title={`
-              Defina o cálculo de proximidade. A conexão entre os nós da rede será realizado
-              com base na medida de distância definida, onde busca expressar certa relação entre
-              as constituições (nós) da rede. Cada medida possui resultados diferentes.
-            `}
+                    Define the similarity calculation. The connection between the network nodes will 
+                    be performed based on the defined distance measure, where it seeks to express a 
+                    certain relationship between the constitutions (nodes) of the network. Each 
+                    measurement has different results.
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <RadioGroup
@@ -208,12 +207,13 @@ export default function ContainerOptionsRight({
                 <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Cluster</FormLabel>
                 <LightTooltip
                   title={`
-                Defina o algoritmo de agrupamento. O algoritmo tentará simbolizar em clusters
-                constituições semelhantes: KMeans define pontos centrais numa rede e os nós mais 
-                próximos pertencerão ao mesmo cluster; Fast Greedy (habilitado apenas se definido 
-                a distância) busca comunidades numa rede, com base nas conexões entre as constituições. 
-                Os algoritmos gerá resultados diferentes.
-            `}
+                    Define the clustering algorithm. The algorithm will try to allocate 
+                    similar constitutions in clusters: KMeans defines central points in a 
+                    network and the closest nodes will belong to the same group; Fast Greedy 
+                    (enabled when distance > 0) searches for communities in a network, 
+                    based on connections between constitutions. The algorithms will generate 
+                    different results.
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <RadioGroup
@@ -242,11 +242,11 @@ export default function ContainerOptionsRight({
               </FormControl>
             </Box>
           </ListItem>
-          <Divider component="li" />
+          <Divider component="li" sx={{background: "#3498db"}} />
           <li>
             <Typography
               sx={{ mt: 0.5, ml: 2 }}
-              color="text.secondary"
+              color="#3498db"
               display="block"
               variant="caption"
             >
@@ -259,10 +259,9 @@ export default function ContainerOptionsRight({
               {showDistance == 0 ? (
                 <LightTooltip
                   title={`
-              A Similidade de Cosseno é a medida que determina o cosseno do ângulo entre 
-              dois vetores no espaço e possui melhor qualidade junto a modelos como Doc2Vec 
-              e Network.
-            `}
+                    Cosine Similarity is the measure that determines the cosine of the 
+                    angle between two vectors in space and generates good results with TF-IDF
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <FormControl className="layoutConfigureForm">
@@ -284,9 +283,9 @@ export default function ContainerOptionsRight({
               ) : (
                 <LightTooltip
                   title={`
-            A distância Euclidiana representa a distância mais curta entre dois pontos 
-            e possui melhor qualidade junto a modelos como o TF-IDF
-            `}
+                    The Euclidean distance represents the shortest distance between two points 
+                    and has better quality with models such as the Doc2Vec and Network
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <FormControl className="layoutConfigureForm">
@@ -310,8 +309,9 @@ export default function ContainerOptionsRight({
               {/* Define a quantidade máxima de vizinhos  */}
               <LightTooltip
                 title={`
-            Define o máximo de conexões que uma constituição (nó) da rede pode ter
-          `}
+                  Defines the maximum number of connections that a network constitution (node) 
+                  can have
+                `}
                 placement="left"
                 enterDelay={3000}>
                 <FormControl className="layoutConfigureForm">
@@ -322,7 +322,7 @@ export default function ContainerOptionsRight({
                     size="small"
                     defaultValue={0}
                     min={0}
-                    max={8}
+                    max={10}
                     step={1}
                     aria-label="Small"
                     valueLabelDisplay="auto"
@@ -331,18 +331,18 @@ export default function ContainerOptionsRight({
                 </FormControl>
               </LightTooltip>
 
-
               {/* Define o layout */}
               <FormControl className="layoutConfigureForm">
                 <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Layout</FormLabel>
                 <LightTooltip
                   title={`
-              Define o layout da rede resultante: Force Layout tentará apróximar as constituições 
-              (nós) que estão conectadas e afastar os que não estão, desta forma perdisse as posições
-              iniciais de cada nó; N-Overlap constrói o layout dentro de uma matriz, de tal forma
-              que os nós não se soprepõem, perdendo a posição inicial; 2D mantém as 
-              posições de cada nó 
-            `}
+                    Defines the layout of the resulting network: Force Layout will try to 
+                    approximate the constitutions (nodes) that are connected and move away 
+                    those that are not, it loses the initial positions of each node; N-Overlap 
+                    builds the layout inside an array in such a way that the nodes do not 
+                    overlap, it loses the initial position; 2D maintains the positions of 
+                    each node.
+                  `}
                   placement="left"
                   enterDelay={3000}>
                   <RadioGroup

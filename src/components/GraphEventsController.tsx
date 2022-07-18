@@ -115,7 +115,7 @@ export default function GraphEventsController({
         .forEach((edge) => {
           graph.addEdge(edge.nodeA, edge.nodeB, {
             size: 1.0,
-            color: "#95a5a6",
+            color: "#DFE6EB",
             source: edge.nodeA,
             target: edge.nodeB
           });
@@ -207,7 +207,7 @@ export default function GraphEventsController({
     // Calcula a similaridade de cosseno/distancia euclidiana entre todos os nós
     if (whoDistance == 0)
       constructGraphByCosine();
-    else 
+    else
       constructGraphByEuclidian();
 
     // Configura size de cada nó de acordo com seu grau
@@ -249,6 +249,7 @@ export default function GraphEventsController({
           labels.forEach((label, index) => {
             graph.setNodeAttribute(label, "cluster", clusters[index]);
             graph.setNodeAttribute(label, "color", colors_clusters[clusters[index]]);
+            // console.log(clusters[index]);
           });
 
           // Aplica animação do layout 
@@ -260,7 +261,7 @@ export default function GraphEventsController({
         })
         .finally(() => setIsLoading(false))
     }
-    
+
     // Clusterização Fast Greedy
     else if (clustering == 2) {
       let nodes: any[] = []
@@ -293,6 +294,7 @@ export default function GraphEventsController({
           data.nodes.forEach((node: any) => {
             graph.setNodeAttribute(node.label, "cluster", node.cluster);
             graph.setNodeAttribute(node.label, "color", colors_clusters[node.cluster]);
+            // console.log(node.cluster);
           });
 
           // Aplica animação do layout 
@@ -308,8 +310,17 @@ export default function GraphEventsController({
 
   // Filter by name
   useEffect(() => {
-    console.log(filterByName);
-  }, [filterByName]);  
+    let color = '';
+    graph.forEachNode(node => {
+      if (filterByName == node) {
+        color = graph.getNodeAttribute(node, 'color');
+        graph.setNodeAttribute(node, 'color', '#c0392b');
+        setTimeout(() => {
+          graph.setNodeAttribute(node, 'color', color);
+        }, 2000);
+      }
+    });
+  }, [filterByName]);
 
   return <>{children}</>;
 }

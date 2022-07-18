@@ -76,7 +76,7 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
     useEffect(() => {
         /**
          * Algoritmo
-         *  TDIDF / Doc2vec / Medidas de centralidade / CPP
+         *  TDIDF / Doc2vec / Medidas de centralidade
          * 
          * Type Reduce
          *  PCA / TSNE
@@ -103,9 +103,6 @@ export default function LayoutConfigureProvider({ children }: LayoutConfigurePro
             case 'network':
                 // Network
                 dataset = typeReduce == "TSNE" ? dataset_network_tsne : dataset_network_pca;
-                break;
-            case 'cpp':
-                // CPP
                 break;
         }
 

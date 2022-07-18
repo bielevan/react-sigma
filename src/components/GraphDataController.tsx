@@ -67,18 +67,19 @@ export default function GraphDataController({ children }: GraphDataControllerPro
         });
 
         // Aplica filtro de acordo com os nós definidos
+        console.log(filter);
         if (filter.nodes.length > 0) {
             graph.forEachNode((node: string) => {
                 if (filter.nodes.findIndex((nodeFilter: string) => node == nodeFilter) < 0) {
                     graph.setNodeAttribute(node, "hidden", 1);
                 }
             });
-
+            
             // Condifura nós visiveis de acordo com a propriedade de minimumDegree
-            graph.forEachNode((node) => {
-                if (graph.degree(node) < minimumDegree)
-                    graph.setNodeAttribute(node, "hidden", 0);
-            });
+            // graph.forEachNode((node) => {
+            //     if (graph.degree(node) < minimumDegree)
+            //         graph.setNodeAttribute(node, "hidden", 0);
+            // });
         }
     }, [filter]);
 

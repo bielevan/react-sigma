@@ -1,8 +1,9 @@
-import { 
-    Chip, FormControl, FormControlLabel, Radio, RadioGroup, 
-    FormLabel, IconButton, InputLabel, MenuItem, OutlinedInput, 
-    Select, SelectChangeEvent, Slider, Theme, useTheme, Button, 
-    styled, Tooltip, TooltipProps, tooltipClasses, TextField 
+import {
+  Chip, FormControl, FormControlLabel, Radio, RadioGroup,
+  FormLabel, IconButton, InputLabel, MenuItem, OutlinedInput,
+  Select, SelectChangeEvent, Slider, Theme, useTheme, Button,
+  styled, Tooltip, TooltipProps, tooltipClasses, TextField,
+  List, Divider, Typography, ListItem
 } from "@mui/material";
 import React, { useContext, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -64,6 +65,8 @@ export default function ContainerOptionsLeft({
   const [continents, setContinents] = useState<string[]>([]);
   const [minPromulgation, setMinPromulgation] = useState<number>(1200); // Controla a data de promulgação minima
   const [maxPromulgation, setMaxPromulgation] = useState<number>(dataActual); // Controla a data de promulgação máxima
+  const [textFieldConstitute, setTextFieldConstitute] = useState<string>("");
+
   const {
     constitutionWordsLength,
     setFilter,
@@ -133,145 +136,166 @@ export default function ContainerOptionsLeft({
       </div>
 
       <div className="containerLayoutConfigureLeft">
-        {/* Seleciona continentes */}
-        <FormControl className="formControlLeft">
-          <LightTooltip
-            title={`
-              Filtra os constinentes que devem aparecer na pesquisa
-            `}
-            placement="right"
-            enterDelay={3000}>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="multiple-chip-label">Continents</InputLabel>
-              <Select
-                labelId="multiple-chip-label"
-                id="multiple-chip-label"
-                multiple
-                value={continents}
-                onChange={handleChange}
-                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                renderValue={(selected) => (
-                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
-                    {selected.map((value) => (
-                      <Chip key={value} label={value} />
-                    ))}
-                  </Box>
-                )}
-                MenuProps={MenuProps}
-              >
-                {selectItems.map((continent) => (
-                  <MenuItem
-                    key={continent}
-                    value={continent}
-                    style={getStyles(continent, continents, theme)}
-                  >
-                    {continent}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </LightTooltip>
-        </FormControl>
+        <List
+          sx={{
+            width: '100%',
+            marginLeft: '10%'
+          }}>
+          <Divider component="li" sx={{ background: "#3498db" }} />
+          <li>
+            <Typography
+              sx={{ mt: 0.5, ml: 2 }}
+              color="#3498db"
+              display="block"
+              variant="caption"
+            >
+              Filter
+            </Typography>
+          </li>
+          <ListItem>
+            <Box>
+              {/* Seleciona continentes */}
+              <FormControl className="formControlLeft">
+                <LightTooltip
+                  title={`
+                    Filters continents based on search settings below
+                  `}
+                  placement="right"
+                  enterDelay={3000}>
+                  <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                    <InputLabel id="multiple-chip-label">Continents</InputLabel>
+                    <Select
+                      labelId="multiple-chip-label"
+                      id="multiple-chip-label"
+                      multiple
+                      value={continents}
+                      onChange={handleChange}
+                      input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                      renderValue={(selected) => (
+                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.3 }}>
+                          {selected.map((value) => (
+                            <Chip key={value} label={value} />
+                          ))}
+                        </Box>
+                      )}
+                      MenuProps={MenuProps}
+                    >
+                      {selectItems.map((continent) => (
+                        <MenuItem
+                          key={continent}
+                          value={continent}
+                          style={getStyles(continent, continents, theme)}
+                        >
+                          {continent}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </LightTooltip>
+              </FormControl>
 
-        {/* Seleciona a data de promulgação  minima */}
-        <LightTooltip
-          title={`
-            Data de promulgação mínima da constituição
-          `}
-          placement="right"
-          enterDelay={3000}>
-          <FormControl className="formControlLeft">
-            <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Promulgation Data</FormLabel>
-            <FormLabel sx={{ fontSize: "0.8rem" }}>
-              Minimum Date: {minPromulgation}
-            </FormLabel>
-            <Slider
-              size="small"
-              defaultValue={1200}
-              aria-label="Small"
-              valueLabelDisplay="auto"
-              min={1200}
-              max={dataActual}
-              step={10}
-              onChange={(event: any) => { setMinPromulgation(event.target.value) }}
-            />
-          </FormControl>
-        </LightTooltip>
+              {/* Seleciona a data de promulgação  minima */}
+              <LightTooltip
+                title={`
+                  Minimum date of promulgation of the constitution
+                `}
+                placement="right"
+                enterDelay={3000}>
+                <FormControl className="formControlLeft">
+                  <FormLabel sx={{ fontSize: "0.9rem", fontWeight: 600 }}>Promulgation Data</FormLabel>
+                  <FormLabel sx={{ fontSize: "0.8rem" }}>
+                    Minimum Date: {minPromulgation}
+                  </FormLabel>
+                  <Slider
+                    size="small"
+                    defaultValue={1200}
+                    aria-label="Small"
+                    valueLabelDisplay="auto"
+                    min={1200}
+                    max={dataActual}
+                    step={10}
+                    onChange={(event: any) => { setMinPromulgation(event.target.value) }}
+                  />
+                </FormControl>
+              </LightTooltip>
 
-        {/* Seleciona a data de promulgação máxima */}
-        <LightTooltip
-          title={`
-            Data de promulgação máxima da constituição
-          `}
-          placement="right"
-          enterDelay={3000}>
-          <FormControl className="formControlLeft">
-            <FormLabel sx={{ fontSize: "0.8rem" }}>
-              Maximum Date: {maxPromulgation}
-            </FormLabel>
-            <Slider
-              size="small"
-              defaultValue={dataActual}
-              aria-label="Small"
-              valueLabelDisplay="auto"
-              min={1200}
-              max={dataActual}
-              step={10}
-              onChange={(event: any) => { setMaxPromulgation(event.target.value); }}
-            />
-          </FormControl>
-        </LightTooltip>
+              {/* Seleciona a data de promulgação máxima */}
+              <LightTooltip
+                title={`
+                  Maximum date of promulgation of the constitution
+                `}
+                placement="right"
+                enterDelay={3000}>
+                <FormControl className="formControlLeft">
+                  <FormLabel sx={{ fontSize: "0.8rem" }}>
+                    Maximum Date: {maxPromulgation}
+                  </FormLabel>
+                  <Slider
+                    size="small"
+                    defaultValue={dataActual}
+                    aria-label="Small"
+                    valueLabelDisplay="auto"
+                    min={1200}
+                    max={dataActual}
+                    step={10}
+                    onChange={(event: any) => { setMaxPromulgation(event.target.value); }}
+                  />
+                </FormControl>
+              </LightTooltip>
 
-        {/* Seleciona o tamanho das constituições */}
-        <LightTooltip
-          title={`
-            Define a quantidade mínima de palavras que uma constituição deve ter
-          `}
-          placement="right"
-          enterDelay={3000}>
-          <FormControl className="formControlLeft">
-            <FormLabel sx={{ fontSize: "0.8rem" }}>
-              Constitution Size: {constitutionWordsLength}
-            </FormLabel>
-            <Slider
-              size="small"
-              defaultValue={0}
-              aria-label="Small"
-              valueLabelDisplay="auto"
-              min={0}
-              max={100000}
-              step={10}
-              onChange={(event: any) => setConstitutionWordsLength(Number(event.target.value))}
-            />
-          </FormControl>
-        </LightTooltip>
+              {/* Seleciona o tamanho das constituições */}
+              <LightTooltip
+                title={`
+                  Define a quantidade mínima de palavras que uma constituição deve ter
+                `}
+                placement="right"
+                enterDelay={3000}>
+                <FormControl className="formControlLeft">
+                  <FormLabel sx={{ fontSize: "0.8rem" }}>
+                    Constitution Size: {constitutionWordsLength}
+                  </FormLabel>
+                  <Slider
+                    size="small"
+                    defaultValue={0}
+                    aria-label="Small"
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={100000}
+                    step={10}
+                    onChange={(event: any) => setConstitutionWordsLength(Number(event.target.value))}
+                  />
+                </FormControl>
+              </LightTooltip>
 
-        {/* Seleciona o grau dos nós */}
-        <LightTooltip
-          title={`
-            Define o o grau (quantidade de conexões) que uma constituição deve ter na rede
-          `}
-          placement="left"
-          enterDelay={3000}>
-          <FormControl className="layoutConfigureForm">
-            <FormLabel sx={{ fontSize: "0.8rem" }}>
-              Minimum Degree: {minimumDegree}
-            </FormLabel>
-            <Slider
-              size="small"
-              defaultValue={0}
-              min={0}
-              max={5}
-              step={1}
-              aria-label="Small"
-              valueLabelDisplay="auto"
-              onChange={(event: any) => {
-                setMinimumDegree(event.target.value);
-              }}
-            />
-          </FormControl>
-        </LightTooltip>
-
+              {/* Seleciona o grau dos nós */}
+              <LightTooltip
+                title={`
+                  Defines the degree (number of connections) that a constitution must 
+                  have to appear on the network
+                `}
+                placement="left"
+                enterDelay={3000}>
+                <FormControl className="formControlLeft">
+                  <FormLabel sx={{ fontSize: "0.8rem" }}>
+                    Minimum Degree: {minimumDegree}
+                  </FormLabel>
+                  <Slider
+                    size="small"
+                    defaultValue={0}
+                    min={0}
+                    max={5}
+                    step={1}
+                    aria-label="Small"
+                    valueLabelDisplay="auto"
+                    onChange={(event: any) => {
+                      setMinimumDegree(event.target.value);
+                    }}
+                  />
+                </FormControl>
+              </LightTooltip>
+            </Box>
+          </ListItem>
+        </List>
       </div>
 
       <div className="applyOptionsBtn">
@@ -360,13 +384,24 @@ export default function ContainerOptionsLeft({
       </div>
 
       <div className="containerLayoutConfigureLeft">
-        <FormControl className="layoutConfigureForm" sx={{ marginBottom: "1rem", width: "85%", marginLeft: "auto", marginRight: "auto" }}>
-            <TextField 
-              id="constituteFilter" 
-              label="Search" 
-              variant="outlined" 
-              size="small"></TextField>
+        <FormControl
+          className="layoutConfigureForm"
+          sx={{ marginBottom: "1rem", width: "85%", marginLeft: "auto", marginRight: "auto" }}>
+          <TextField
+            id="constituteFilter"
+            label="Constitute"
+            variant="outlined"
+            size="small"
+            onChange={(event) => setTextFieldConstitute(event.target.value)}></TextField>
         </FormControl>
+
+        <Button
+          color="warning"
+          variant="outlined"
+          size="small"
+          onClick={() => setFilterByName(textFieldConstitute.split(" ").join("_"))}>
+          Search
+        </Button>
       </div>
     </section >
   );

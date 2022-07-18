@@ -44,15 +44,34 @@ const colors_number_of_rights: string[] = [
 
 const colors_clusters: string[] = [
     '#1abc9c',
+    '#16a085',
     '#2ecc71',
+    '#27ae60',
     '#3498db',
     '#9b59b6',
     '#34495e',
     '#f1c40f',
     '#e67e22',
+    '#d35400',
+    '#d35400',
     '#e74c3c',
+    '#c0392b',
+    '#bdc3c7',
     '#7f8c8d',
-    '#e84393'
+    '#badc58',
+    '#e056fd',
+    '#7ed6df',
+    '#130f40',
+    '#9c88ff',
+    '#2f3640',
+    '#40739e',
+    '#9c88ff',
+    '#c23616',
+    '#33d9b2',
+    '#ccae62',
+    '#ffcccc',
+    '#32ff7e',
+    '#4b4b4b',
   ]
 
 export {
